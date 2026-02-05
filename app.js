@@ -179,7 +179,7 @@ function initI18n() {
         },
         zh: {
             title: "BEMANI PRO LEAGUE S5 SDVX 常规赛第10轮后 晋级形势可视化",
-            subtitle: "用红/黄/绿展示剩余比赛（胜/平/负）所有组合下的晋级形势。",
+            subtitle: "用颜色展示剩余比赛所有（胜/平/负）组合下的晋级形势。",
             whatIf: "假设赛果是……",
             clear: "清空",
             views: "各队情况图",
