@@ -1,0 +1,3431 @@
+{
+  "meta": {
+    "matches": [
+      {
+        "id": "m1",
+        "label": "LEISURELAND vs APINA"
+      },
+      {
+        "id": "m2",
+        "label": "ROUND1 vs GiGO"
+      },
+      {
+        "id": "m3",
+        "label": "Tradz vs GiGO"
+      },
+      {
+        "id": "m4",
+        "label": "GAME PANIC vs SILKHAT"
+      }
+    ]
+  },
+  "scenarios": [
+    {
+      "id": "S01",
+      "results": {
+        "m1": "W",
+        "m2": "W",
+        "m3": "W",
+        "m4": "W"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "red"
+        },
+        "ROUND1": {
+          "bucket": "green"
+        },
+        "Tradz": {
+          "bucket": "green"
+        },
+        "GiGO": {
+          "bucket": "red"
+        },
+        "GAME PANIC": {
+          "bucket": "green"
+        },
+        "SILKHAT": {
+          "bucket": "red"
+        }
+      }
+    },
+    {
+      "id": "S56",
+      "results": {
+        "m1": "L",
+        "m2": "W",
+        "m3": "W",
+        "m4": "D"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "green"
+        },
+        "ROUND1": {
+          "bucket": "green"
+        },
+        "Tradz": {
+          "bucket": "green"
+        },
+        "GiGO": {
+          "bucket": "red"
+        },
+        "GAME PANIC": {
+          "bucket": "red"
+        },
+        "SILKHAT": {
+          "bucket": "red"
+        }
+      }
+    },
+    {
+      "id": "S64",
+      "results": {
+        "m1": "L",
+        "m2": "D",
+        "m3": "W",
+        "m4": "W"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "green"
+        },
+        "ROUND1": {
+          "bucket": "red"
+        },
+        "Tradz": {
+          "bucket": "green"
+        },
+        "GiGO": {
+          "bucket": "red"
+        },
+        "GAME PANIC": {
+          "bucket": "green"
+        },
+        "SILKHAT": {
+          "bucket": "red"
+        }
+      }
+    },
+    {
+      "id": "S04",
+      "results": {
+        "m1": "W",
+        "m2": "W",
+        "m3": "D",
+        "m4": "W"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "red"
+        },
+        "ROUND1": {
+          "bucket": "green"
+        },
+        "Tradz": {
+          "bucket": "green"
+        },
+        "GiGO": {
+          "bucket": "red"
+        },
+        "GAME PANIC": {
+          "bucket": "green"
+        },
+        "SILKHAT": {
+          "bucket": "red"
+        }
+      }
+    },
+    {
+      "id": "S74",
+      "results": {
+        "m1": "L",
+        "m2": "L",
+        "m3": "W",
+        "m4": "D"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "green"
+        },
+        "ROUND1": {
+          "bucket": "red"
+        },
+        "Tradz": {
+          "bucket": "green"
+        },
+        "GiGO": {
+          "bucket": "green"
+        },
+        "GAME PANIC": {
+          "bucket": "red"
+        },
+        "SILKHAT": {
+          "bucket": "red"
+        }
+      }
+    },
+    {
+      "id": "S57",
+      "results": {
+        "m1": "L",
+        "m2": "W",
+        "m3": "W",
+        "m4": "L"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "green"
+        },
+        "ROUND1": {
+          "bucket": "green"
+        },
+        "Tradz": {
+          "bucket": "green"
+        },
+        "GiGO": {
+          "bucket": "red"
+        },
+        "GAME PANIC": {
+          "bucket": "red"
+        },
+        "SILKHAT": {
+          "bucket": "red"
+        }
+      }
+    },
+    {
+      "id": "S60",
+      "results": {
+        "m1": "L",
+        "m2": "W",
+        "m3": "D",
+        "m4": "L"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "green"
+        },
+        "ROUND1": {
+          "bucket": "green"
+        },
+        "Tradz": {
+          "bucket": "green"
+        },
+        "GiGO": {
+          "bucket": "red"
+        },
+        "GAME PANIC": {
+          "bucket": "red"
+        },
+        "SILKHAT": {
+          "bucket": "red"
+        }
+      }
+    },
+    {
+      "id": "S70",
+      "results": {
+        "m1": "L",
+        "m2": "D",
+        "m3": "L",
+        "m4": "W"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "green"
+        },
+        "ROUND1": {
+          "bucket": "red"
+        },
+        "Tradz": {
+          "bucket": "red"
+        },
+        "GiGO": {
+          "bucket": "green"
+        },
+        "GAME PANIC": {
+          "bucket": "green"
+        },
+        "SILKHAT": {
+          "bucket": "red"
+        }
+      }
+    },
+    {
+      "id": "S66",
+      "results": {
+        "m1": "L",
+        "m2": "D",
+        "m3": "W",
+        "m4": "L"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "green"
+        },
+        "ROUND1": {
+          "bucket": "green"
+        },
+        "Tradz": {
+          "bucket": "green"
+        },
+        "GiGO": {
+          "bucket": "red"
+        },
+        "GAME PANIC": {
+          "bucket": "red"
+        },
+        "SILKHAT": {
+          "bucket": "red"
+        }
+      }
+    },
+    {
+      "id": "S10",
+      "results": {
+        "m1": "W",
+        "m2": "D",
+        "m3": "W",
+        "m4": "W"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "red"
+        },
+        "ROUND1": {
+          "bucket": "green"
+        },
+        "Tradz": {
+          "bucket": "green"
+        },
+        "GiGO": {
+          "bucket": "red"
+        },
+        "GAME PANIC": {
+          "bucket": "green"
+        },
+        "SILKHAT": {
+          "bucket": "red"
+        }
+      }
+    },
+    {
+      "id": "S28",
+      "results": {
+        "m1": "D",
+        "m2": "W",
+        "m3": "W",
+        "m4": "W"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "red"
+        },
+        "ROUND1": {
+          "bucket": "green"
+        },
+        "Tradz": {
+          "bucket": "green"
+        },
+        "GiGO": {
+          "bucket": "red"
+        },
+        "GAME PANIC": {
+          "bucket": "green"
+        },
+        "SILKHAT": {
+          "bucket": "red"
+        }
+      }
+    },
+    {
+      "id": "S62",
+      "results": {
+        "m1": "L",
+        "m2": "W",
+        "m3": "L",
+        "m4": "D"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "green"
+        },
+        "ROUND1": {
+          "bucket": "green"
+        },
+        "Tradz": {
+          "bucket": "red"
+        },
+        "GiGO": {
+          "bucket": "green"
+        },
+        "GAME PANIC": {
+          "bucket": "red"
+        },
+        "SILKHAT": {
+          "bucket": "red"
+        }
+      }
+    },
+    {
+      "id": "S31",
+      "results": {
+        "m1": "D",
+        "m2": "W",
+        "m3": "D",
+        "m4": "W"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "red"
+        },
+        "ROUND1": {
+          "bucket": "green"
+        },
+        "Tradz": {
+          "bucket": "green"
+        },
+        "GiGO": {
+          "bucket": "red"
+        },
+        "GAME PANIC": {
+          "bucket": "green"
+        },
+        "SILKHAT": {
+          "bucket": "red"
+        }
+      }
+    },
+    {
+      "id": "S02",
+      "results": {
+        "m1": "W",
+        "m2": "W",
+        "m3": "W",
+        "m4": "D"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "red"
+        },
+        "ROUND1": {
+          "bucket": "green"
+        },
+        "Tradz": {
+          "bucket": "green"
+        },
+        "GiGO": {
+          "bucket": "red"
+        },
+        "GAME PANIC": {
+          "bucket": "green"
+        },
+        "SILKHAT": {
+          "bucket": "red"
+        }
+      }
+    },
+    {
+      "id": "S05",
+      "results": {
+        "m1": "W",
+        "m2": "W",
+        "m3": "D",
+        "m4": "D"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "red"
+        },
+        "ROUND1": {
+          "bucket": "green"
+        },
+        "Tradz": {
+          "bucket": "green"
+        },
+        "GiGO": {
+          "bucket": "red"
+        },
+        "GAME PANIC": {
+          "bucket": "green"
+        },
+        "SILKHAT": {
+          "bucket": "red"
+        }
+      }
+    },
+    {
+      "id": "S37",
+      "results": {
+        "m1": "D",
+        "m2": "D",
+        "m3": "W",
+        "m4": "W"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "red"
+        },
+        "ROUND1": {
+          "bucket": "green"
+        },
+        "Tradz": {
+          "bucket": "green"
+        },
+        "GiGO": {
+          "bucket": "red"
+        },
+        "GAME PANIC": {
+          "bucket": "green"
+        },
+        "SILKHAT": {
+          "bucket": "red"
+        }
+      }
+    },
+    {
+      "id": "S29",
+      "results": {
+        "m1": "D",
+        "m2": "W",
+        "m3": "W",
+        "m4": "D"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "red"
+        },
+        "ROUND1": {
+          "bucket": "green"
+        },
+        "Tradz": {
+          "bucket": "green"
+        },
+        "GiGO": {
+          "bucket": "red"
+        },
+        "GAME PANIC": {
+          "bucket": "green"
+        },
+        "SILKHAT": {
+          "bucket": "red"
+        }
+      }
+    },
+    {
+      "id": "S15",
+      "results": {
+        "m1": "W",
+        "m2": "D",
+        "m3": "D",
+        "m4": "L"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "red"
+        },
+        "ROUND1": {
+          "bucket": "green"
+        },
+        "Tradz": {
+          "bucket": "green"
+        },
+        "GiGO": {
+          "bucket": "green"
+        },
+        "GAME PANIC": {
+          "bucket": "red"
+        },
+        "SILKHAT": {
+          "bucket": "red"
+        }
+      }
+    },
+    {
+      "id": "S55",
+      "results": {
+        "m1": "L",
+        "m2": "W",
+        "m3": "W",
+        "m4": "W"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "red"
+        },
+        "ROUND1": {
+          "bucket": "green"
+        },
+        "Tradz": {
+          "bucket": "green"
+        },
+        "GiGO": {
+          "bucket": "red"
+        },
+        "GAME PANIC": {
+          "bucket": "green"
+        },
+        "SILKHAT": {
+          "bucket": "red"
+        }
+      }
+    },
+    {
+      "id": "S32",
+      "results": {
+        "m1": "D",
+        "m2": "W",
+        "m3": "D",
+        "m4": "D"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "red"
+        },
+        "ROUND1": {
+          "bucket": "green"
+        },
+        "Tradz": {
+          "bucket": "green"
+        },
+        "GiGO": {
+          "bucket": "red"
+        },
+        "GAME PANIC": {
+          "bucket": "green"
+        },
+        "SILKHAT": {
+          "bucket": "red"
+        }
+      }
+    },
+    {
+      "id": "S58",
+      "results": {
+        "m1": "L",
+        "m2": "W",
+        "m3": "D",
+        "m4": "W"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "green"
+        },
+        "ROUND1": {
+          "bucket": "green"
+        },
+        "Tradz": {
+          "bucket": "red"
+        },
+        "GiGO": {
+          "bucket": "red"
+        },
+        "GAME PANIC": {
+          "bucket": "green"
+        },
+        "SILKHAT": {
+          "bucket": "red"
+        }
+      }
+    },
+    {
+      "id": "S11",
+      "results": {
+        "m1": "W",
+        "m2": "D",
+        "m3": "W",
+        "m4": "D"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "red"
+        },
+        "ROUND1": {
+          "bucket": "green"
+        },
+        "Tradz": {
+          "bucket": "green"
+        },
+        "GiGO": {
+          "bucket": "red"
+        },
+        "GAME PANIC": {
+          "bucket": "green"
+        },
+        "SILKHAT": {
+          "bucket": "red"
+        }
+      }
+    },
+    {
+      "id": "S42",
+      "results": {
+        "m1": "D",
+        "m2": "D",
+        "m3": "D",
+        "m4": "L"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "red"
+        },
+        "ROUND1": {
+          "bucket": "green"
+        },
+        "Tradz": {
+          "bucket": "green"
+        },
+        "GiGO": {
+          "bucket": "green"
+        },
+        "GAME PANIC": {
+          "bucket": "red"
+        },
+        "SILKHAT": {
+          "bucket": "red"
+        }
+      }
+    },
+    {
+      "id": "S07",
+      "results": {
+        "m1": "W",
+        "m2": "W",
+        "m3": "L",
+        "m4": "W"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "red"
+        },
+        "ROUND1": {
+          "bucket": "green"
+        },
+        "Tradz": {
+          "bucket": "red"
+        },
+        "GiGO": {
+          "bucket": "green"
+        },
+        "GAME PANIC": {
+          "bucket": "green"
+        },
+        "SILKHAT": {
+          "bucket": "red"
+        }
+      }
+    },
+    {
+      "id": "S38",
+      "results": {
+        "m1": "D",
+        "m2": "D",
+        "m3": "W",
+        "m4": "D"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "red"
+        },
+        "ROUND1": {
+          "bucket": "green"
+        },
+        "Tradz": {
+          "bucket": "green"
+        },
+        "GiGO": {
+          "bucket": "red"
+        },
+        "GAME PANIC": {
+          "bucket": "green"
+        },
+        "SILKHAT": {
+          "bucket": "red"
+        }
+      }
+    },
+    {
+      "id": "S16",
+      "results": {
+        "m1": "W",
+        "m2": "D",
+        "m3": "L",
+        "m4": "W"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "red"
+        },
+        "ROUND1": {
+          "bucket": "green"
+        },
+        "Tradz": {
+          "bucket": "red"
+        },
+        "GiGO": {
+          "bucket": "green"
+        },
+        "GAME PANIC": {
+          "bucket": "green"
+        },
+        "SILKHAT": {
+          "bucket": "red"
+        }
+      }
+    },
+    {
+      "id": "S75",
+      "results": {
+        "m1": "L",
+        "m2": "L",
+        "m3": "W",
+        "m4": "L"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "green"
+        },
+        "ROUND1": {
+          "bucket": "red"
+        },
+        "Tradz": {
+          "bucket": "green"
+        },
+        "GiGO": {
+          "bucket": "green"
+        },
+        "GAME PANIC": {
+          "bucket": "red"
+        },
+        "SILKHAT": {
+          "bucket": "red"
+        }
+      }
+    },
+    {
+      "id": "S78",
+      "results": {
+        "m1": "L",
+        "m2": "L",
+        "m3": "D",
+        "m4": "L"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "green"
+        },
+        "ROUND1": {
+          "bucket": "red"
+        },
+        "Tradz": {
+          "bucket": "green"
+        },
+        "GiGO": {
+          "bucket": "green"
+        },
+        "GAME PANIC": {
+          "bucket": "red"
+        },
+        "SILKHAT": {
+          "bucket": "red"
+        }
+      }
+    },
+    {
+      "id": "S08",
+      "results": {
+        "m1": "W",
+        "m2": "W",
+        "m3": "L",
+        "m4": "D"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "red"
+        },
+        "ROUND1": {
+          "bucket": "green"
+        },
+        "Tradz": {
+          "bucket": "red"
+        },
+        "GiGO": {
+          "bucket": "green"
+        },
+        "GAME PANIC": {
+          "bucket": "green"
+        },
+        "SILKHAT": {
+          "bucket": "red"
+        }
+      }
+    },
+    {
+      "id": "S72",
+      "results": {
+        "m1": "L",
+        "m2": "D",
+        "m3": "L",
+        "m4": "L"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "green"
+        },
+        "ROUND1": {
+          "bucket": "green"
+        },
+        "Tradz": {
+          "bucket": "red"
+        },
+        "GiGO": {
+          "bucket": "green"
+        },
+        "GAME PANIC": {
+          "bucket": "red"
+        },
+        "SILKHAT": {
+          "bucket": "red"
+        }
+      }
+    },
+    {
+      "id": "S19",
+      "results": {
+        "m1": "W",
+        "m2": "L",
+        "m3": "W",
+        "m4": "W"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "red"
+        },
+        "ROUND1": {
+          "bucket": "red"
+        },
+        "Tradz": {
+          "bucket": "green"
+        },
+        "GiGO": {
+          "bucket": "green"
+        },
+        "GAME PANIC": {
+          "bucket": "green"
+        },
+        "SILKHAT": {
+          "bucket": "red"
+        }
+      }
+    },
+    {
+      "id": "S17",
+      "results": {
+        "m1": "W",
+        "m2": "D",
+        "m3": "L",
+        "m4": "D"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "red"
+        },
+        "ROUND1": {
+          "bucket": "green"
+        },
+        "Tradz": {
+          "bucket": "red"
+        },
+        "GiGO": {
+          "bucket": "green"
+        },
+        "GAME PANIC": {
+          "bucket": "green"
+        },
+        "SILKHAT": {
+          "bucket": "red"
+        }
+      }
+    },
+    {
+      "id": "S22",
+      "results": {
+        "m1": "W",
+        "m2": "L",
+        "m3": "D",
+        "m4": "W"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "red"
+        },
+        "ROUND1": {
+          "bucket": "red"
+        },
+        "Tradz": {
+          "bucket": "green"
+        },
+        "GiGO": {
+          "bucket": "green"
+        },
+        "GAME PANIC": {
+          "bucket": "green"
+        },
+        "SILKHAT": {
+          "bucket": "red"
+        }
+      }
+    },
+    {
+      "id": "S20",
+      "results": {
+        "m1": "W",
+        "m2": "L",
+        "m3": "W",
+        "m4": "D"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "red"
+        },
+        "ROUND1": {
+          "bucket": "red"
+        },
+        "Tradz": {
+          "bucket": "green"
+        },
+        "GiGO": {
+          "bucket": "green"
+        },
+        "GAME PANIC": {
+          "bucket": "green"
+        },
+        "SILKHAT": {
+          "bucket": "red"
+        }
+      }
+    },
+    {
+      "id": "S46",
+      "results": {
+        "m1": "D",
+        "m2": "L",
+        "m3": "W",
+        "m4": "W"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "red"
+        },
+        "ROUND1": {
+          "bucket": "red"
+        },
+        "Tradz": {
+          "bucket": "green"
+        },
+        "GiGO": {
+          "bucket": "green"
+        },
+        "GAME PANIC": {
+          "bucket": "green"
+        },
+        "SILKHAT": {
+          "bucket": "red"
+        }
+      }
+    },
+    {
+      "id": "S23",
+      "results": {
+        "m1": "W",
+        "m2": "L",
+        "m3": "D",
+        "m4": "D"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "red"
+        },
+        "ROUND1": {
+          "bucket": "red"
+        },
+        "Tradz": {
+          "bucket": "green"
+        },
+        "GiGO": {
+          "bucket": "green"
+        },
+        "GAME PANIC": {
+          "bucket": "green"
+        },
+        "SILKHAT": {
+          "bucket": "red"
+        }
+      }
+    },
+    {
+      "id": "S49",
+      "results": {
+        "m1": "D",
+        "m2": "L",
+        "m3": "D",
+        "m4": "W"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "red"
+        },
+        "ROUND1": {
+          "bucket": "red"
+        },
+        "Tradz": {
+          "bucket": "green"
+        },
+        "GiGO": {
+          "bucket": "green"
+        },
+        "GAME PANIC": {
+          "bucket": "green"
+        },
+        "SILKHAT": {
+          "bucket": "red"
+        }
+      }
+    },
+    {
+      "id": "S47",
+      "results": {
+        "m1": "D",
+        "m2": "L",
+        "m3": "W",
+        "m4": "D"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "red"
+        },
+        "ROUND1": {
+          "bucket": "red"
+        },
+        "Tradz": {
+          "bucket": "green"
+        },
+        "GiGO": {
+          "bucket": "green"
+        },
+        "GAME PANIC": {
+          "bucket": "green"
+        },
+        "SILKHAT": {
+          "bucket": "red"
+        }
+      }
+    },
+    {
+      "id": "S43",
+      "results": {
+        "m1": "D",
+        "m2": "D",
+        "m3": "L",
+        "m4": "W"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "red"
+        },
+        "ROUND1": {
+          "bucket": "green"
+        },
+        "Tradz": {
+          "bucket": "red"
+        },
+        "GiGO": {
+          "bucket": "green"
+        },
+        "GAME PANIC": {
+          "bucket": "green"
+        },
+        "SILKHAT": {
+          "bucket": "red"
+        }
+      }
+    },
+    {
+      "id": "S63",
+      "results": {
+        "m1": "L",
+        "m2": "W",
+        "m3": "L",
+        "m4": "L"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "green"
+        },
+        "ROUND1": {
+          "bucket": "green"
+        },
+        "Tradz": {
+          "bucket": "red"
+        },
+        "GiGO": {
+          "bucket": "green"
+        },
+        "GAME PANIC": {
+          "bucket": "red"
+        },
+        "SILKHAT": {
+          "bucket": "red"
+        }
+      }
+    },
+    {
+      "id": "S50",
+      "results": {
+        "m1": "D",
+        "m2": "L",
+        "m3": "D",
+        "m4": "D"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "red"
+        },
+        "ROUND1": {
+          "bucket": "red"
+        },
+        "Tradz": {
+          "bucket": "green"
+        },
+        "GiGO": {
+          "bucket": "green"
+        },
+        "GAME PANIC": {
+          "bucket": "green"
+        },
+        "SILKHAT": {
+          "bucket": "red"
+        }
+      }
+    },
+    {
+      "id": "S34",
+      "results": {
+        "m1": "D",
+        "m2": "W",
+        "m3": "L",
+        "m4": "W"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "red"
+        },
+        "ROUND1": {
+          "bucket": "green"
+        },
+        "Tradz": {
+          "bucket": "red"
+        },
+        "GiGO": {
+          "bucket": "green"
+        },
+        "GAME PANIC": {
+          "bucket": "green"
+        },
+        "SILKHAT": {
+          "bucket": "red"
+        }
+      }
+    },
+    {
+      "id": "S44",
+      "results": {
+        "m1": "D",
+        "m2": "D",
+        "m3": "L",
+        "m4": "D"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "red"
+        },
+        "ROUND1": {
+          "bucket": "green"
+        },
+        "Tradz": {
+          "bucket": "red"
+        },
+        "GiGO": {
+          "bucket": "green"
+        },
+        "GAME PANIC": {
+          "bucket": "green"
+        },
+        "SILKHAT": {
+          "bucket": "red"
+        }
+      }
+    },
+    {
+      "id": "S69",
+      "results": {
+        "m1": "L",
+        "m2": "D",
+        "m3": "D",
+        "m4": "L"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "green"
+        },
+        "ROUND1": {
+          "bucket": "yellow",
+          "tie": 3
+        },
+        "Tradz": {
+          "bucket": "yellow",
+          "tie": 3
+        },
+        "GiGO": {
+          "bucket": "yellow",
+          "tie": 3
+        },
+        "GAME PANIC": {
+          "bucket": "red"
+        },
+        "SILKHAT": {
+          "bucket": "red"
+        }
+      }
+    },
+    {
+      "id": "S03",
+      "results": {
+        "m1": "W",
+        "m2": "W",
+        "m3": "W",
+        "m4": "L"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "red"
+        },
+        "ROUND1": {
+          "bucket": "green"
+        },
+        "Tradz": {
+          "bucket": "green"
+        },
+        "GiGO": {
+          "bucket": "red"
+        },
+        "GAME PANIC": {
+          "bucket": "yellow",
+          "tie": 2
+        },
+        "SILKHAT": {
+          "bucket": "yellow",
+          "tie": 2
+        }
+      }
+    },
+    {
+      "id": "S18",
+      "results": {
+        "m1": "W",
+        "m2": "D",
+        "m3": "L",
+        "m4": "L"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "red"
+        },
+        "ROUND1": {
+          "bucket": "green"
+        },
+        "Tradz": {
+          "bucket": "yellow",
+          "tie": 3
+        },
+        "GiGO": {
+          "bucket": "green"
+        },
+        "GAME PANIC": {
+          "bucket": "yellow",
+          "tie": 3
+        },
+        "SILKHAT": {
+          "bucket": "yellow",
+          "tie": 3
+        }
+      }
+    },
+    {
+      "id": "S35",
+      "results": {
+        "m1": "D",
+        "m2": "W",
+        "m3": "L",
+        "m4": "D"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "red"
+        },
+        "ROUND1": {
+          "bucket": "green"
+        },
+        "Tradz": {
+          "bucket": "red"
+        },
+        "GiGO": {
+          "bucket": "green"
+        },
+        "GAME PANIC": {
+          "bucket": "green"
+        },
+        "SILKHAT": {
+          "bucket": "red"
+        }
+      }
+    },
+    {
+      "id": "S76",
+      "results": {
+        "m1": "L",
+        "m2": "L",
+        "m3": "D",
+        "m4": "W"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "green"
+        },
+        "ROUND1": {
+          "bucket": "red"
+        },
+        "Tradz": {
+          "bucket": "red"
+        },
+        "GiGO": {
+          "bucket": "green"
+        },
+        "GAME PANIC": {
+          "bucket": "green"
+        },
+        "SILKHAT": {
+          "bucket": "red"
+        }
+      }
+    },
+    {
+      "id": "S80",
+      "results": {
+        "m1": "L",
+        "m2": "L",
+        "m3": "L",
+        "m4": "D"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "green"
+        },
+        "ROUND1": {
+          "bucket": "red"
+        },
+        "Tradz": {
+          "bucket": "red"
+        },
+        "GiGO": {
+          "bucket": "green"
+        },
+        "GAME PANIC": {
+          "bucket": "green"
+        },
+        "SILKHAT": {
+          "bucket": "red"
+        }
+      }
+    },
+    {
+      "id": "S40",
+      "results": {
+        "m1": "D",
+        "m2": "D",
+        "m3": "D",
+        "m4": "W"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "red"
+        },
+        "ROUND1": {
+          "bucket": "yellow",
+          "tie": 3
+        },
+        "Tradz": {
+          "bucket": "yellow",
+          "tie": 3
+        },
+        "GiGO": {
+          "bucket": "yellow",
+          "tie": 3
+        },
+        "GAME PANIC": {
+          "bucket": "green"
+        },
+        "SILKHAT": {
+          "bucket": "red"
+        }
+      }
+    },
+    {
+      "id": "S79",
+      "results": {
+        "m1": "L",
+        "m2": "L",
+        "m3": "L",
+        "m4": "W"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "green"
+        },
+        "ROUND1": {
+          "bucket": "red"
+        },
+        "Tradz": {
+          "bucket": "red"
+        },
+        "GiGO": {
+          "bucket": "green"
+        },
+        "GAME PANIC": {
+          "bucket": "green"
+        },
+        "SILKHAT": {
+          "bucket": "red"
+        }
+      }
+    },
+    {
+      "id": "S26",
+      "results": {
+        "m1": "W",
+        "m2": "L",
+        "m3": "L",
+        "m4": "D"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "red"
+        },
+        "ROUND1": {
+          "bucket": "yellow",
+          "tie": 2
+        },
+        "Tradz": {
+          "bucket": "yellow",
+          "tie": 2
+        },
+        "GiGO": {
+          "bucket": "green"
+        },
+        "GAME PANIC": {
+          "bucket": "green"
+        },
+        "SILKHAT": {
+          "bucket": "red"
+        }
+      }
+    },
+    {
+      "id": "S41",
+      "results": {
+        "m1": "D",
+        "m2": "D",
+        "m3": "D",
+        "m4": "D"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "red"
+        },
+        "ROUND1": {
+          "bucket": "yellow",
+          "tie": 4
+        },
+        "Tradz": {
+          "bucket": "yellow",
+          "tie": 4
+        },
+        "GiGO": {
+          "bucket": "yellow",
+          "tie": 4
+        },
+        "GAME PANIC": {
+          "bucket": "yellow",
+          "tie": 4
+        },
+        "SILKHAT": {
+          "bucket": "red"
+        }
+      }
+    },
+    {
+      "id": "S09",
+      "results": {
+        "m1": "W",
+        "m2": "W",
+        "m3": "L",
+        "m4": "L"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "red"
+        },
+        "ROUND1": {
+          "bucket": "green"
+        },
+        "Tradz": {
+          "bucket": "yellow",
+          "tie": 3
+        },
+        "GiGO": {
+          "bucket": "green"
+        },
+        "GAME PANIC": {
+          "bucket": "yellow",
+          "tie": 3
+        },
+        "SILKHAT": {
+          "bucket": "yellow",
+          "tie": 3
+        }
+      }
+    },
+    {
+      "id": "S12",
+      "results": {
+        "m1": "W",
+        "m2": "D",
+        "m3": "W",
+        "m4": "L"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "red"
+        },
+        "ROUND1": {
+          "bucket": "green"
+        },
+        "Tradz": {
+          "bucket": "green"
+        },
+        "GiGO": {
+          "bucket": "yellow",
+          "tie": 3
+        },
+        "GAME PANIC": {
+          "bucket": "yellow",
+          "tie": 3
+        },
+        "SILKHAT": {
+          "bucket": "yellow",
+          "tie": 3
+        }
+      }
+    },
+    {
+      "id": "S45",
+      "results": {
+        "m1": "D",
+        "m2": "D",
+        "m3": "L",
+        "m4": "L"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "yellow",
+          "tie": 4
+        },
+        "ROUND1": {
+          "bucket": "green"
+        },
+        "Tradz": {
+          "bucket": "yellow",
+          "tie": 4
+        },
+        "GiGO": {
+          "bucket": "green"
+        },
+        "GAME PANIC": {
+          "bucket": "yellow",
+          "tie": 4
+        },
+        "SILKHAT": {
+          "bucket": "yellow",
+          "tie": 4
+        }
+      }
+    },
+    {
+      "id": "S73",
+      "results": {
+        "m1": "L",
+        "m2": "L",
+        "m3": "W",
+        "m4": "W"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "yellow",
+          "tie": 2
+        },
+        "ROUND1": {
+          "bucket": "red"
+        },
+        "Tradz": {
+          "bucket": "green"
+        },
+        "GiGO": {
+          "bucket": "yellow",
+          "tie": 2
+        },
+        "GAME PANIC": {
+          "bucket": "green"
+        },
+        "SILKHAT": {
+          "bucket": "red"
+        }
+      }
+    },
+    {
+      "id": "S30",
+      "results": {
+        "m1": "D",
+        "m2": "W",
+        "m3": "W",
+        "m4": "L"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "yellow",
+          "tie": 3
+        },
+        "ROUND1": {
+          "bucket": "green"
+        },
+        "Tradz": {
+          "bucket": "green"
+        },
+        "GiGO": {
+          "bucket": "red"
+        },
+        "GAME PANIC": {
+          "bucket": "yellow",
+          "tie": 3
+        },
+        "SILKHAT": {
+          "bucket": "yellow",
+          "tie": 3
+        }
+      }
+    },
+    {
+      "id": "S21",
+      "results": {
+        "m1": "W",
+        "m2": "L",
+        "m3": "W",
+        "m4": "L"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "red"
+        },
+        "ROUND1": {
+          "bucket": "yellow",
+          "tie": 3
+        },
+        "Tradz": {
+          "bucket": "green"
+        },
+        "GiGO": {
+          "bucket": "green"
+        },
+        "GAME PANIC": {
+          "bucket": "yellow",
+          "tie": 3
+        },
+        "SILKHAT": {
+          "bucket": "yellow",
+          "tie": 3
+        }
+      }
+    },
+    {
+      "id": "S36",
+      "results": {
+        "m1": "D",
+        "m2": "W",
+        "m3": "L",
+        "m4": "L"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "yellow",
+          "tie": 4
+        },
+        "ROUND1": {
+          "bucket": "green"
+        },
+        "Tradz": {
+          "bucket": "yellow",
+          "tie": 4
+        },
+        "GiGO": {
+          "bucket": "green"
+        },
+        "GAME PANIC": {
+          "bucket": "yellow",
+          "tie": 4
+        },
+        "SILKHAT": {
+          "bucket": "yellow",
+          "tie": 4
+        }
+      }
+    },
+    {
+      "id": "S24",
+      "results": {
+        "m1": "W",
+        "m2": "L",
+        "m3": "D",
+        "m4": "L"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "red"
+        },
+        "ROUND1": {
+          "bucket": "yellow",
+          "tie": 3
+        },
+        "Tradz": {
+          "bucket": "green"
+        },
+        "GiGO": {
+          "bucket": "green"
+        },
+        "GAME PANIC": {
+          "bucket": "yellow",
+          "tie": 3
+        },
+        "SILKHAT": {
+          "bucket": "yellow",
+          "tie": 3
+        }
+      }
+    },
+    {
+      "id": "S27",
+      "results": {
+        "m1": "W",
+        "m2": "L",
+        "m3": "L",
+        "m4": "L"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "red"
+        },
+        "ROUND1": {
+          "bucket": "yellow",
+          "tie": 4
+        },
+        "Tradz": {
+          "bucket": "yellow",
+          "tie": 4
+        },
+        "GiGO": {
+          "bucket": "green"
+        },
+        "GAME PANIC": {
+          "bucket": "yellow",
+          "tie": 4
+        },
+        "SILKHAT": {
+          "bucket": "yellow",
+          "tie": 4
+        }
+      }
+    },
+    {
+      "id": "S59",
+      "results": {
+        "m1": "L",
+        "m2": "W",
+        "m3": "D",
+        "m4": "D"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "green"
+        },
+        "ROUND1": {
+          "bucket": "green"
+        },
+        "Tradz": {
+          "bucket": "yellow",
+          "tie": 2
+        },
+        "GiGO": {
+          "bucket": "red"
+        },
+        "GAME PANIC": {
+          "bucket": "yellow",
+          "tie": 2
+        },
+        "SILKHAT": {
+          "bucket": "red"
+        }
+      }
+    },
+    {
+      "id": "S39",
+      "results": {
+        "m1": "D",
+        "m2": "D",
+        "m3": "W",
+        "m4": "L"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "yellow",
+          "tie": 4
+        },
+        "ROUND1": {
+          "bucket": "green"
+        },
+        "Tradz": {
+          "bucket": "green"
+        },
+        "GiGO": {
+          "bucket": "yellow",
+          "tie": 4
+        },
+        "GAME PANIC": {
+          "bucket": "yellow",
+          "tie": 4
+        },
+        "SILKHAT": {
+          "bucket": "yellow",
+          "tie": 4
+        }
+      }
+    },
+    {
+      "id": "S25",
+      "results": {
+        "m1": "W",
+        "m2": "L",
+        "m3": "L",
+        "m4": "W"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "red"
+        },
+        "ROUND1": {
+          "bucket": "yellow",
+          "tie": 2
+        },
+        "Tradz": {
+          "bucket": "yellow",
+          "tie": 2
+        },
+        "GiGO": {
+          "bucket": "green"
+        },
+        "GAME PANIC": {
+          "bucket": "green"
+        },
+        "SILKHAT": {
+          "bucket": "red"
+        }
+      }
+    },
+    {
+      "id": "S77",
+      "results": {
+        "m1": "L",
+        "m2": "L",
+        "m3": "D",
+        "m4": "D"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "green"
+        },
+        "ROUND1": {
+          "bucket": "red"
+        },
+        "Tradz": {
+          "bucket": "yellow",
+          "tie": 2
+        },
+        "GiGO": {
+          "bucket": "green"
+        },
+        "GAME PANIC": {
+          "bucket": "yellow",
+          "tie": 2
+        },
+        "SILKHAT": {
+          "bucket": "red"
+        }
+      }
+    },
+    {
+      "id": "S53",
+      "results": {
+        "m1": "D",
+        "m2": "L",
+        "m3": "L",
+        "m4": "D"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "yellow",
+          "tie": 3
+        },
+        "ROUND1": {
+          "bucket": "yellow",
+          "tie": 3
+        },
+        "Tradz": {
+          "bucket": "yellow",
+          "tie": 3
+        },
+        "GiGO": {
+          "bucket": "green"
+        },
+        "GAME PANIC": {
+          "bucket": "green"
+        },
+        "SILKHAT": {
+          "bucket": "red"
+        }
+      }
+    },
+    {
+      "id": "S48",
+      "results": {
+        "m1": "D",
+        "m2": "L",
+        "m3": "W",
+        "m4": "L"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "yellow",
+          "tie": 4
+        },
+        "ROUND1": {
+          "bucket": "yellow",
+          "tie": 4
+        },
+        "Tradz": {
+          "bucket": "green"
+        },
+        "GiGO": {
+          "bucket": "green"
+        },
+        "GAME PANIC": {
+          "bucket": "yellow",
+          "tie": 4
+        },
+        "SILKHAT": {
+          "bucket": "yellow",
+          "tie": 4
+        }
+      }
+    },
+    {
+      "id": "S65",
+      "results": {
+        "m1": "L",
+        "m2": "D",
+        "m3": "W",
+        "m4": "D"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "green"
+        },
+        "ROUND1": {
+          "bucket": "yellow",
+          "tie": 2
+        },
+        "Tradz": {
+          "bucket": "green"
+        },
+        "GiGO": {
+          "bucket": "red"
+        },
+        "GAME PANIC": {
+          "bucket": "yellow",
+          "tie": 2
+        },
+        "SILKHAT": {
+          "bucket": "red"
+        }
+      }
+    },
+    {
+      "id": "S51",
+      "results": {
+        "m1": "D",
+        "m2": "L",
+        "m3": "D",
+        "m4": "L"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "yellow",
+          "tie": 4
+        },
+        "ROUND1": {
+          "bucket": "yellow",
+          "tie": 4
+        },
+        "Tradz": {
+          "bucket": "green"
+        },
+        "GiGO": {
+          "bucket": "green"
+        },
+        "GAME PANIC": {
+          "bucket": "yellow",
+          "tie": 4
+        },
+        "SILKHAT": {
+          "bucket": "yellow",
+          "tie": 4
+        }
+      }
+    },
+    {
+      "id": "S61",
+      "results": {
+        "m1": "L",
+        "m2": "W",
+        "m3": "L",
+        "m4": "W"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "yellow",
+          "tie": 2
+        },
+        "ROUND1": {
+          "bucket": "green"
+        },
+        "Tradz": {
+          "bucket": "red"
+        },
+        "GiGO": {
+          "bucket": "yellow",
+          "tie": 2
+        },
+        "GAME PANIC": {
+          "bucket": "green"
+        },
+        "SILKHAT": {
+          "bucket": "red"
+        }
+      }
+    },
+    {
+      "id": "S81",
+      "results": {
+        "m1": "L",
+        "m2": "L",
+        "m3": "L",
+        "m4": "L"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "green"
+        },
+        "ROUND1": {
+          "bucket": "yellow",
+          "tie": 4
+        },
+        "Tradz": {
+          "bucket": "yellow",
+          "tie": 4
+        },
+        "GiGO": {
+          "bucket": "green"
+        },
+        "GAME PANIC": {
+          "bucket": "yellow",
+          "tie": 4
+        },
+        "SILKHAT": {
+          "bucket": "yellow",
+          "tie": 4
+        }
+      }
+    },
+    {
+      "id": "S71",
+      "results": {
+        "m1": "L",
+        "m2": "D",
+        "m3": "L",
+        "m4": "D"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "green"
+        },
+        "ROUND1": {
+          "bucket": "yellow",
+          "tie": 2
+        },
+        "Tradz": {
+          "bucket": "red"
+        },
+        "GiGO": {
+          "bucket": "green"
+        },
+        "GAME PANIC": {
+          "bucket": "yellow",
+          "tie": 2
+        },
+        "SILKHAT": {
+          "bucket": "red"
+        }
+      }
+    },
+    {
+      "id": "S13",
+      "results": {
+        "m1": "W",
+        "m2": "D",
+        "m3": "D",
+        "m4": "W"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "red"
+        },
+        "ROUND1": {
+          "bucket": "yellow",
+          "tie": 3
+        },
+        "Tradz": {
+          "bucket": "yellow",
+          "tie": 3
+        },
+        "GiGO": {
+          "bucket": "yellow",
+          "tie": 3
+        },
+        "GAME PANIC": {
+          "bucket": "green"
+        },
+        "SILKHAT": {
+          "bucket": "red"
+        }
+      }
+    },
+    {
+      "id": "S14",
+      "results": {
+        "m1": "W",
+        "m2": "D",
+        "m3": "D",
+        "m4": "D"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "red"
+        },
+        "ROUND1": {
+          "bucket": "yellow",
+          "tie": 4
+        },
+        "Tradz": {
+          "bucket": "yellow",
+          "tie": 4
+        },
+        "GiGO": {
+          "bucket": "yellow",
+          "tie": 4
+        },
+        "GAME PANIC": {
+          "bucket": "yellow",
+          "tie": 4
+        },
+        "SILKHAT": {
+          "bucket": "red"
+        }
+      }
+    },
+    {
+      "id": "S52",
+      "results": {
+        "m1": "D",
+        "m2": "L",
+        "m3": "L",
+        "m4": "W"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "yellow",
+          "tie": 3
+        },
+        "ROUND1": {
+          "bucket": "yellow",
+          "tie": 3
+        },
+        "Tradz": {
+          "bucket": "yellow",
+          "tie": 3
+        },
+        "GiGO": {
+          "bucket": "green"
+        },
+        "GAME PANIC": {
+          "bucket": "green"
+        },
+        "SILKHAT": {
+          "bucket": "red"
+        }
+      }
+    },
+    {
+      "id": "S54",
+      "results": {
+        "m1": "D",
+        "m2": "L",
+        "m3": "L",
+        "m4": "L"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "yellow",
+          "tie": 5
+        },
+        "ROUND1": {
+          "bucket": "yellow",
+          "tie": 5
+        },
+        "Tradz": {
+          "bucket": "yellow",
+          "tie": 5
+        },
+        "GiGO": {
+          "bucket": "green"
+        },
+        "GAME PANIC": {
+          "bucket": "yellow",
+          "tie": 5
+        },
+        "SILKHAT": {
+          "bucket": "yellow",
+          "tie": 5
+        }
+      }
+    },
+    {
+      "id": "S06",
+      "results": {
+        "m1": "W",
+        "m2": "W",
+        "m3": "D",
+        "m4": "L"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "red"
+        },
+        "ROUND1": {
+          "bucket": "green"
+        },
+        "Tradz": {
+          "bucket": "green"
+        },
+        "GiGO": {
+          "bucket": "yellow",
+          "tie": 3
+        },
+        "GAME PANIC": {
+          "bucket": "yellow",
+          "tie": 3
+        },
+        "SILKHAT": {
+          "bucket": "yellow",
+          "tie": 3
+        }
+      }
+    },
+    {
+      "id": "S67",
+      "results": {
+        "m1": "L",
+        "m2": "D",
+        "m3": "D",
+        "m4": "W"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "green"
+        },
+        "ROUND1": {
+          "bucket": "yellow",
+          "tie": 3
+        },
+        "Tradz": {
+          "bucket": "yellow",
+          "tie": 3
+        },
+        "GiGO": {
+          "bucket": "yellow",
+          "tie": 3
+        },
+        "GAME PANIC": {
+          "bucket": "green"
+        },
+        "SILKHAT": {
+          "bucket": "red"
+        }
+      }
+    },
+    {
+      "id": "S33",
+      "results": {
+        "m1": "D",
+        "m2": "W",
+        "m3": "D",
+        "m4": "L"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "yellow",
+          "tie": 4
+        },
+        "ROUND1": {
+          "bucket": "green"
+        },
+        "Tradz": {
+          "bucket": "green"
+        },
+        "GiGO": {
+          "bucket": "yellow",
+          "tie": 4
+        },
+        "GAME PANIC": {
+          "bucket": "yellow",
+          "tie": 4
+        },
+        "SILKHAT": {
+          "bucket": "yellow",
+          "tie": 4
+        }
+      }
+    },
+    {
+      "id": "S68",
+      "results": {
+        "m1": "L",
+        "m2": "D",
+        "m3": "D",
+        "m4": "D"
+      },
+      "byTeam": {
+        "LEISURELAND": {
+          "bucket": "green"
+        },
+        "APINA": {
+          "bucket": "green"
+        },
+        "ROUND1": {
+          "bucket": "yellow",
+          "tie": 4
+        },
+        "Tradz": {
+          "bucket": "yellow",
+          "tie": 4
+        },
+        "GiGO": {
+          "bucket": "yellow",
+          "tie": 4
+        },
+        "GAME PANIC": {
+          "bucket": "yellow",
+          "tie": 4
+        },
+        "SILKHAT": {
+          "bucket": "red"
+        }
+      }
+    }
+  ],
+  "views": {
+    "bars": {
+      "LEISURELAND": {
+        "rows": {
+          "W": [
+            "S01",
+            "S13",
+            "S25",
+            "S27",
+            "S24",
+            "S21",
+            "S12",
+            "S09",
+            "S26",
+            "S18",
+            "S03",
+            "S23",
+            "S14",
+            "S20",
+            "S17",
+            "S19",
+            "S08",
+            "S16",
+            "S07",
+            "S11",
+            "S15",
+            "S05",
+            "S02",
+            "S10",
+            "S04",
+            "S22",
+            "S06"
+          ],
+          "D": [
+            "S28",
+            "S52",
+            "S51",
+            "S48",
+            "S53",
+            "S39",
+            "S36",
+            "S30",
+            "S45",
+            "S41",
+            "S40",
+            "S35",
+            "S54",
+            "S44",
+            "S50",
+            "S43",
+            "S47",
+            "S49",
+            "S46",
+            "S38",
+            "S42",
+            "S32",
+            "S29",
+            "S37",
+            "S31",
+            "S34",
+            "S33"
+          ],
+          "L": [
+            "S56",
+            "S71",
+            "S81",
+            "S61",
+            "S65",
+            "S77",
+            "S59",
+            "S73",
+            "S79",
+            "S80",
+            "S76",
+            "S69",
+            "S67",
+            "S63",
+            "S78",
+            "S75",
+            "S58",
+            "S55",
+            "S62",
+            "S66",
+            "S70",
+            "S60",
+            "S57",
+            "S74",
+            "S64",
+            "S72",
+            "S68"
+          ]
+        }
+      },
+      "APINA": {
+        "rows": {
+                      "W": [
+            "S56",
+            "S71",
+            "S81",
+            "S65",
+            "S77",
+            "S59",
+            "S79",
+            "S80",
+            "S76",
+            "S69",
+            "S67",
+            "S72",
+            "S63",
+            "S75",
+            "S58",
+            "S62",
+            "S66",
+            "S70",
+            "S60",
+            "S57",
+            "S74",
+            "S64",
+            "S78",
+            "S68",
+            "S73",
+            "S61",
+            "S55"
+          ],
+          "D": [
+            "S52",
+            "S53",
+            "S30",
+            "S33",
+            "S51",
+            "S48",
+            "S39",
+            "S36",
+            "S45",
+            "S54",
+            "S41",
+            "S40",
+            "S35",
+            "S28",
+            "S50",
+            "S43",
+            "S47",
+            "S49",
+            "S46",
+            "S38",
+            "S42",
+            "S32",
+            "S29",
+            "S37",
+            "S31",
+            "S34",
+            "S44"
+          ],
+                    "L": [
+            "S01",
+            "S13",
+            "S25",
+            "S27",
+            "S24",
+            "S21",
+            "S12",
+            "S09",
+            "S26",
+            "S18",
+            "S03",
+            "S23",
+            "S14",
+            "S20",
+            "S17",
+            "S19",
+            "S08",
+            "S16",
+            "S07",
+            "S11",
+            "S15",
+            "S05",
+            "S02",
+            "S10",
+            "S04",
+            "S22",
+            "S06"
+          ]
+        }
+      },
+      "ROUND1": {
+        "rows": {
+          "W": [
+            "S01",
+            "S61",
+            "S59",
+            "S36",
+            "S30",
+            "S09",
+            "S35",
+            "S03",
+            "S34",
+            "S63",
+            "S08",
+            "S07",
+            "S06",
+            "S58",
+            "S55",
+            "S29",
+            "S05",
+            "S02",
+            "S31",
+            "S62",
+            "S28",
+            "S60",
+            "S57",
+            "S04",
+            "S56",
+            "S32",
+            "S33"
+          ],
+          "D": [
+            "S44",
+            "S39",
+            "S45",
+            "S12",
+            "S18",
+            "S43",
+            "S72",
+            "S16",
+            "S17",
+            "S42",
+            "S11",
+            "S15",
+            "S37",
+            "S10",
+            "S66",
+            "S38",
+            "S65",
+            "S71",
+            "S67",
+            "S69",
+            "S40",
+            "S13",
+            "S14",
+            "S68",
+            "S41",
+            "S70",
+            "S64"
+          ],
+          "L": [
+            "S25",
+            "S26",
+            "S53",
+            "S24",
+            "S21",
+            "S52",
+            "S81",
+            "S51",
+            "S48",
+            "S27",
+            "S54",
+            "S77",
+            "S73",
+            "S74",
+            "S76",
+            "S50",
+            "S47",
+            "S49",
+            "S23",
+            "S46",
+            "S20",
+            "S22",
+            "S19",
+            "S78",
+            "S75",
+            "S80",
+            "S79"
+          ]
+        }
+      },
+      "Tradz": {
+        "rows": {
+          "W": [
+            "S01",
+            "S39",
+            "S21",
+            "S30",
+            "S73",
+            "S12",
+            "S03",
+            "S47",
+            "S46",
+            "S20",
+            "S19",
+            "S75",
+            "S48",
+            "S38",
+            "S55",
+            "S29",
+            "S37",
+            "S02",
+            "S28",
+            "S10",
+            "S66",
+            "S57",
+            "S74",
+            "S64",
+            "S56",
+            "S11",
+            "S65"
+          ],
+          "D": [
+            "S04",
+            "S24",
+            "S51",
+            "S06",
+            "S33",
+            "S50",
+            "S49",
+            "S23",
+            "S22",
+            "S42",
+            "S32",
+            "S15",
+            "S05",
+            "S31",
+            "S60",
+            "S78",
+            "S59",
+            "S77",
+            "S67",
+            "S13",
+            "S69",
+            "S40",
+            "S14",
+            "S41",
+            "S68",
+            "S76",
+            "S58"
+          ],
+          "L": [
+            "S25",
+            "S26",
+            "S53",
+            "S09",
+            "S18",
+            "S52",
+            "S81",
+            "S27",
+            "S36",
+            "S45",
+            "S54",
+            "S71",
+            "S61",
+            "S79",
+            "S70",
+            "S44",
+            "S34",
+            "S63",
+            "S43",
+            "S17",
+            "S72",
+            "S08",
+            "S16",
+            "S07",
+            "S62",
+            "S35",
+            "S80"
+          ]
+        }
+      },
+      "GAME PANIC": {
+        "rows": {
+          "W": [
+            "S01",
+            "S13",
+            "S61",
+            "S25",
+            "S73",
+            "S79",
+            "S40",
+            "S76",
+            "S34",
+            "S43",
+            "S49",
+            "S46",
+            "S52",
+            "S22",
+            "S16",
+            "S07",
+            "S58",
+            "S55",
+            "S37",
+            "S31",
+            "S28",
+            "S10",
+            "S70",
+            "S04",
+            "S64",
+            "S19",
+            "S67"
+          ],
+          "D": [
+            "S47",
+            "S26",
+            "S80",
+            "S35",
+            "S44",
+            "S50",
+            "S53",
+            "S23",
+            "S20",
+            "S17",
+            "S38",
+            "S11",
+            "S32",
+            "S29",
+            "S05",
+            "S02",
+            "S08",
+            "S77",
+            "S65",
+            "S71",
+            "S59",
+            "S68",
+            "S14",
+            "S41",
+            "S62",
+            "S74",
+            "S56"
+          ],
+          "L": [
+            "S03",
+            "S12",
+            "S24",
+            "S21",
+            "S30",
+            "S18",
+            "S09",
+            "S06",
+            "S81",
+            "S51",
+            "S48",
+            "S39",
+            "S27",
+            "S36",
+            "S33",
+            "S45",
+            "S54",
+            "S69",
+            "S63",
+            "S72",
+            "S78",
+            "S75",
+            "S42",
+            "S15",
+            "S66",
+            "S60",
+            "S57"
+          ]
+        }
+      },
+      "SILKHAT": {
+        "rows": {
+                      "W": [
+            "S03",
+            "S12",
+            "S24",
+            "S21",
+            "S30",
+            "S18",
+            "S09",
+            "S06",
+            "S81",
+            "S51",
+            "S48",
+            "S39",
+            "S27",
+            "S36",
+            "S33",
+            "S45",
+            "S54",
+            "S69",
+            "S63",
+            "S72",
+            "S78",
+            "S75",
+            "S42",
+            "S15",
+            "S66",
+            "S60",
+            "S57"
+          ],
+          "D": [
+            "S56",
+            "S71",
+            "S65",
+            "S53",
+            "S77",
+            "S59",
+            "S41",
+            "S26",
+            "S80",
+            "S35",
+            "S44",
+            "S50",
+            "S14",
+            "S47",
+            "S20",
+            "S17",
+            "S08",
+            "S38",
+            "S11",
+            "S32",
+            "S29",
+            "S05",
+            "S02",
+            "S62",
+            "S74",
+            "S23",
+            "S68"
+          ],
+                    "L": [
+            "S01",
+            "S13",
+            "S61",
+            "S25",
+            "S73",
+            "S79",
+            "S40",
+            "S76",
+            "S34",
+            "S43",
+            "S49",
+            "S46",
+            "S52",
+            "S22",
+            "S16",
+            "S07",
+            "S58",
+            "S55",
+            "S37",
+            "S31",
+            "S28",
+            "S10",
+            "S70",
+            "S04",
+            "S64",
+            "S19",
+            "S67"
+          ]
+        }
+      }
+    },
+    "gigo": {
+      "axes": {
+        "rowTitle": "vs ROUND1",
+        "colTitle": "vs Tradz",
+        "rows": [
+          "W R1",
+          "D R1",
+          "L R1"
+        ],
+        "cols": [
+          "W Tradz",
+          "D Tradz",
+          "L Tradz"
+        ]
+      },
+      "blocks": [
+        {
+          "r": 0,
+          "c": 0,
+          "title": "W R1 × W Tradz",
+          "cells": [
+            "S80",
+            "S79",
+            "S26",
+            "S27",
+            "S25",
+            "S53",
+            "S81",
+            "S52",
+            "S54"
+          ]
+        },
+                {
+          "r": 0,
+          "c": 1,
+          "title": "W R1 × D Tradz",
+          "cells": [
+            "S78",
+            "S22",
+            "S23",
+            "S49",
+            "S50",
+            "S76",
+            "S24",
+            "S77",
+            "S51"
+          ]
+        } ,       {
+          "r": 0,
+          "c": 2,
+          "title": "W R1 × L Tradz",
+          "cells": [
+            "S74",
+            "S75",
+            "S19",
+            "S20",
+            "S46",
+            "S47",
+            "S21",
+            "S48",
+            "S73"
+          ]
+        },        {
+          "r": 1,
+          "c": 0,
+          "title": "D R1 × W Tradz",
+          "cells": [
+            "S70",
+            "S16",
+            "S72",
+            "S17",
+            "S43",
+            "S44",
+            "S18",
+            "S45",
+            "S71"
+          ]
+        },
+                {
+          "r": 1,
+          "c": 1,
+          "title": "D R1 × D Tradz",
+          "cells": [
+            "S15",
+            "S42",
+            "S69",
+            "S40",
+            "S13",
+            "S67",
+            "S41",
+            "S14",
+            "S68"
+          ]
+        },
+                {
+          "r": 1,
+          "c": 2,
+          "title": "D R1 × L Tradz",
+          "cells": [
+            "S12",
+            "S39",
+            "S64",
+            "S66",
+            "S10",
+            "S37",
+            "S11",
+            "S38",
+            "S65"
+          ]
+        },        {
+          "r": 2,
+          "c": 0,
+          "title": "L R1 × W Tradz",
+          "cells": [
+            "S62",
+            "S07",
+            "S08",
+            "S63",
+            "S34",
+            "S35",
+            "S09",
+            "S36",
+            "S61"
+          ]
+        },
+        {
+          "r": 2,
+          "c": 1,
+          "title": "L R1 × D Tradz",
+          "cells": [
+            "S06",
+            "S33",
+            "S04",
+            "S60",
+            "S31",
+            "S05",
+            "S32",
+            "S58",
+            "S59"
+          ]
+        },
+        {
+          "r": 2,
+          "c": 2,
+          "title": "L R1 × L Tradz",
+          "cells": [
+            "S01",
+            "S56",
+            "S57",
+            "S28",
+            "S02",
+            "S29",
+            "S55",
+            "S03",
+            "S30"
+          ]
+        }
+      ]
+    }
+  }
+}
