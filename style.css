@@ -33,6 +33,7 @@ header h1 {
 
 .subtitle {
   color: #aaa;
+  font-size: 15px;
 }
 
 .team-note {
@@ -45,6 +46,10 @@ header h1 {
   color: #aaa;
   margin: 5px 0px;
   font-size: 12px;
+}
+
+.legend-item{
+  margin: 2px 0px;
 }
 
 .team-view {
@@ -63,6 +68,7 @@ header h1 {
 .cell {
   width: 14px;
   height: 14px;
+  border-radius: 5px;
   position: relative;
   opacity: 0.3;
   cursor: pointer;
@@ -83,8 +89,8 @@ header h1 {
   display: inline-block;
   width: 14px;
   height: 14px;
-  border-radius: 4px;
-  margin-right: 8px;
+  border-radius: 5px;
+  margin-right: 3px;
   vertical-align: middle;
 }
 
@@ -124,16 +130,17 @@ button.opt.active {
 .cell.empty { background: transparent; border: 1px dashed #333; opacity: 0.4; }
 
 .rows { display: grid; gap: 5px; }
-.row { display: grid; grid-template-columns: 22px 1fr; align-items: center; gap: 3px; grid-auto-rows: 14px;}
+.row { display: grid; grid-template-columns: 22px 1fr; align-items: center; gap: 3px; grid-auto-rows: 13px;}
 .row-label { color:#aaa; font-weight:700; font-size:12px; text-align:center; }
 
 .gigo-board {
   display: grid;
   grid-template-columns: repeat(3, max-content);
-  gap: 10px;
+  gap: 15px;
+  padding: 7px 0px;
 }
 
-.gigo-block .block-title { font-size: 11px; color: #aaa; margin-bottom: 4px; }
+.gigo-block .block-title { font-size: 11px; color: #aaa; margin-bottom: 5px; }
 
 .grid-3x3 {
   display: grid;
@@ -144,7 +151,7 @@ button.opt.active {
 .view-grid{
   display: grid;
   grid-template-columns: repeat(2, minmax(520px, 1fr));
-  gap: 28px 36px;
+  gap: 0px 36px;
   align-items: start;
 }
 
@@ -178,6 +185,15 @@ button.opt.active {
 .lang-btn.active{
   border-color:#fff;
   color:#fff;
+}
+
+.clear-btn{
+  background:#222;
+  color:#ddd;
+  border:1px solid #444;
+  padding:4px 10px;
+  border-radius:10px;
+  cursor:pointer;
 }
 
 .tooltip{

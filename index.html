@@ -34,28 +34,38 @@
             <button type="button" class="lang-btn" data-lang="zh">中文</button>
         </div>
 
+        <br/>
+        <hr/>
     </header>
 
     <main>
+
         <!-- Filters -->
         <section id="filters" class="panel">
-            <div class="panel-head">
-                <h2 data-i18n="whatIf">What if… (Match Results)</h2>
-                <button id="clearFilters" type="button">Clear</button>
+            <div class="hint">
+                <p data-i18n="howto1">
+                    The charts below visualize all possible outcomes across the remaining matches and how each team could advance.
+                </p>
+                <p data-i18n="howto2">
+                    Each cell represents one possible W/D/L combination across the remaining 4 matches.
+                    Colors indicate the result for each team in that scenario.
+                </p>
+                <p data-i18n="howto3">
+                    Hover a cell to highlight the same scenario across all views.
+                    Click a cell to apply filters matching that scenario.
+                </p>
             </div>
+
+            <hr/>
 
             <!-- app.js will populate match rows into this container -->
-            <div class="match-filters" aria-label="Match filters"></div>
-
-            <div class="hint">
-                <p data-i18n="tipHover">
-                    Hover a cell to highlight the same scenario across views.
-                    Click a cell to set filters to match that scenario.
-                </p>
-                <p data-i18n="tipHover2">
-                    Each cell represents one W/D/L combination across the remaining 4 matches.
-                </p>
+            <div class="panel-head">
+                <h2 data-i18n="whatIf">What if… (Match Results)</h2>
             </div>
+
+            <div class="match-filters" aria-label="Match filters"></div><br/>
+
+            <button data-i18n="clear" class="clear-btn" id="clearFilters" type="button">Clear</button>
         </section>
 
         <!-- Views -->
@@ -219,43 +229,43 @@
                     <div class="gigo-board">
                         <!-- row 0 -->
                         <div class="gigo-block" data-r="0" data-c="0">
-                            <div class="block-title"></div>
+                            <b><div class="block-title"></div></b>
                             <div class="grid-3x3"></div>
                         </div>
                         <div class="gigo-block" data-r="0" data-c="1">
-                            <div class="block-title"></div>
+                            <b><div class="block-title"></div></b>
                             <div class="grid-3x3"></div>
                         </div>
                         <div class="gigo-block" data-r="0" data-c="2">
-                            <div class="block-title"></div>
+                            <b><div class="block-title"></div></b>
                             <div class="grid-3x3"></div>
                         </div>
 
                         <!-- row 1 -->
                         <div class="gigo-block" data-r="1" data-c="0">
-                            <div class="block-title"></div>
+                            <b><div class="block-title"></div></b>
                             <div class="grid-3x3"></div>
                         </div>
                         <div class="gigo-block" data-r="1" data-c="1">
-                            <div class="block-title"></div>
+                            <b><div class="block-title"></div></b>
                             <div class="grid-3x3"></div>
                         </div>
                         <div class="gigo-block" data-r="1" data-c="2">
-                            <div class="block-title"></div>
+                            <b><div class="block-title"></div></b>
                             <div class="grid-3x3"></div>
                         </div>
 
                         <!-- row 2 -->
                         <div class="gigo-block" data-r="2" data-c="0">
-                            <div class="block-title"></div>
+                            <b><div class="block-title"></div></b>
                             <div class="grid-3x3"></div>
                         </div>
                         <div class="gigo-block" data-r="2" data-c="1">
-                            <div class="block-title"></div>
+                            <b><div class="block-title"></div></b>
                             <div class="grid-3x3"></div>
                         </div>
                         <div class="gigo-block" data-r="2" data-c="2">
-                            <div class="block-title"></div>
+                            <b><div class="block-title"></div></b>
                             <div class="grid-3x3"></div>
                         </div>
                     </div>

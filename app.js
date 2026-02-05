@@ -123,10 +123,6 @@ function renderGigoGrid() {
     const cfg = DATA.views?.gigo;
     if (!root || !cfg) return;
 
-    // 渲染轴标题（可选）
-    // cfg.axes.rowTitle / colTitle / rows / cols 你可以做成 DOM 标题
-
-    // 渲染 9 个 block
     const blocks = root.querySelectorAll(".gigo-block");
     blocks.forEach(blockEl => {
         const r = Number(blockEl.dataset.r);
@@ -171,8 +167,10 @@ function initI18n() {
             hoverQualified: "Qualified",
             hoverTiebreaker: "Tiebreaker",
             hoverEliminated: "Eliminated",
-            tipHover: "Hover a cell to highlight the same scenario across views. Click a cell to set filters to match that scenario.",
-            tipHover2: "Each cell represents one W/D/L combination across the remaining 4 matches.",
+            howto: "How to read?",
+            howto1: "The charts visualize all possible outcomes across the remaining matches and how each team could advance.",
+            howto2: "Each cell represents one possible W/D/L combination across the remaining 4 matches. Colors indicate the result for each team in that scenario.",
+            howto3: "Hover a cell to highlight the same scenario across all views. Click a cell to apply filters matching that scenario.",
             "callout-apina": "APINA VRAMeS might still be eliminated even if they win their final game.",
             "callout-fiveway": "If everything aligns, FIVE teams could end up tied on VP — forcing a chaotic tiebreaker scenario.",
             noteGiGO: "9 blocks, each contains a W/D/L sceanrio combination regarding 2 matches of GiGO."
@@ -183,7 +181,7 @@ function initI18n() {
             subtitle: "残り試合の勝敗（勝/分/敗）組み合わせを、各チームの進出/タイブレーク/敗退で可視化します。",
             device: "最適な閲覧体験のため、デスクトップまたはノートパソコンで本サイトをご利用ください。",
             whatIf: "試合結果",
-            clear: "クリア",
+            clear: "リセット",
             views: "チーム別ビュー",
             teams: "チーム",
             legendQualified: "セミファイナル進出",
@@ -193,8 +191,10 @@ function initI18n() {
             hoverQualified: "進出確定",
             hoverTiebreaker: "タイブレーク",
             hoverEliminated: "敗退確定",
-            tipHover: "セルにカーソルで同一シナリオをハイライト。クリックでそのシナリオに合わせてフィルターを設定します。",
-            tipHover2: "各セルは、残り4試合の勝・分・負の組み合わせ1通りを示しています。",
+            howto: "読み方",
+            howto1: "以下の図は、残り試合のすべての結果パターンにおいて、各チームがどのように進出状況が変化するかを可視化したものです。",
+            howto2: "各セルは、残り4試合における勝敗（勝／分／負）の1つの組み合わせを表しています。色はそのシナリオにおける進出状況を示しています。",
+            howto3: "セルにカーソルを合わせると、同一シナリオがすべての図でハイライトされます。セルをクリックすると、その結果に対応するシナリオのみが表示されます。",
             "callout-apina": "APINA VRAMeSは最終戦に勝っても、敗退する可能性があります。",
             "callout-fiveway": "条件がすべて噛み合うと、5チームが勝点で同率となり、混沌としたタイブレークに突入する可能性も…！？",
             noteGiGO: "全9ブロックで、各ブロックはGiGOの2試合における勝敗（W/D/L）のシナリオ1通りを表しています。"
@@ -204,7 +204,7 @@ function initI18n() {
             subtitle: "用颜色展示剩余比赛所有（胜/平/负）组合下的晋级形势。",
             device: "为获得最佳浏览体验，请使用台式机或笔记本电脑访问本网站。",
             whatIf: "假设赛果是……",
-            clear: "清空",
+            clear: "重置",
             views: "各队情况图",
             teams: "队",
             legendQualified: "晋级季后赛",
@@ -214,8 +214,10 @@ function initI18n() {
             hoverQualified: "必定晋级",
             hoverTiebreaker: "需要破平",
             hoverEliminated: "必定淘汰",
-            tipHover: "鼠标悬停高亮同一情景。点击格子可将赛果自动切换到该情景。",
-            tipHover2: "每个单元格代表剩余4场比赛中一种胜/平/负的组合。",
+            howto: "如何读图",
+            howto1: "图表展示了在剩余比赛的所有可能结果下，各支队伍的晋级情况变化。",
+            howto2: "每一个色块代表剩余 4 场比赛中一种胜 / 平 / 负的组合情况。颜色表示该情形下的结果：晋级、需要破平，或被淘汰。",
+            howto3: "将鼠标悬停在色块上，可在所有视图中高亮同一种组合情况。点击色块，可筛选出与该情况一致的比赛结果。",
             "callout-apina": "就算 APINA VRAMeS 获胜，在最糟糕的几种情况下仍然可能出局。",
             "callout-fiveway": "有一种最离谱的剧本——5只队伍的胜分甚至会完全相同，并列第三，直接进入完全无法预测的破平环节…！？",
             noteGiGO: "9个区域中，每一个区域表示一种 GiGO 自己参与的两场比赛的胜/平/负情景组合。"

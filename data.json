@@ -3287,7 +3287,7 @@
         {
           "r": 0,
           "c": 0,
-          "title": "W R1 × W Tradz",
+          "title": "W R1, W Tradz",
           "cells": [
             "S80",
             "S79",
@@ -3303,7 +3303,7 @@
                 {
           "r": 0,
           "c": 1,
-          "title": "W R1 × D Tradz",
+          "title": "W R1, D Tradz",
           "cells": [
             "S78",
             "S22",
@@ -3318,7 +3318,7 @@
         } ,       {
           "r": 0,
           "c": 2,
-          "title": "W R1 × L Tradz",
+          "title": "W R1, L Tradz",
           "cells": [
             "S74",
             "S75",
@@ -3333,7 +3333,7 @@
         },        {
           "r": 1,
           "c": 0,
-          "title": "D R1 × W Tradz",
+          "title": "D R1, W Tradz",
           "cells": [
             "S70",
             "S16",
@@ -3349,7 +3349,7 @@
                 {
           "r": 1,
           "c": 1,
-          "title": "D R1 × D Tradz",
+          "title": "D R1, D Tradz",
           "cells": [
             "S15",
             "S42",
@@ -3365,7 +3365,7 @@
                 {
           "r": 1,
           "c": 2,
-          "title": "D R1 × L Tradz",
+          "title": "D R1, L Tradz",
           "cells": [
             "S12",
             "S39",
@@ -3380,7 +3380,7 @@
         },        {
           "r": 2,
           "c": 0,
-          "title": "L R1 × W Tradz",
+          "title": "L R1, W Tradz",
           "cells": [
             "S62",
             "S07",
@@ -3396,7 +3396,7 @@
         {
           "r": 2,
           "c": 1,
-          "title": "L R1 × D Tradz",
+          "title": "L R1, D Tradz",
           "cells": [
             "S06",
             "S33",
@@ -3412,7 +3412,7 @@
         {
           "r": 2,
           "c": 2,
-          "title": "L R1 × L Tradz",
+          "title": "L R1, L Tradz",
           "cells": [
             "S01",
             "S56",
