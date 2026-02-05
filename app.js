@@ -33,6 +33,10 @@ fetch("data.json")
         );
     });
 
+/**
+ * i18n
+ */
+
 function applyI18n(lang) {
     const dict = I18N[lang] || I18N.en;
 
@@ -71,6 +75,14 @@ function markActiveLang(lang) {
         btn.classList.toggle("active", btn.dataset.lang === lang);
     });
 }
+
+function t(key){
+    return I18N[document.documentElement.lang]?.[key] ?? I18N.en[key];
+}
+
+/**
+ * Render
+ */
 
 function renderAllViews() {
     allCells = [];
@@ -151,10 +163,14 @@ function initI18n() {
             whatIf: "What if… (Match Results)",
             views: "Views",
             clear: "Clear",
+            teams: " Teams",
             legendQualified: "Qualified",
             legendTiebreak: "Tiebreaker (VP tied)",
             legendTieNote: "Numbers = number of tied teams",
             legendEliminated: "Eliminated",
+            hoverQualified: "Qualified",
+            hoverTiebreaker: "Tiebreaker",
+            hoverEliminated: "Eliminated",
             tipHover: "Hover a cell to highlight the same scenario across views. Click a cell to set filters to match that scenario.",
             tipHover2: "Each cell represents one W/D/L combination across the remaining 4 matches.",
             "callout-apina": "APINA VRAMeS might still be eliminated even if they win their final game.",
@@ -169,10 +185,14 @@ function initI18n() {
             whatIf: "試合結果",
             clear: "クリア",
             views: "チーム別ビュー",
+            teams: "チーム",
             legendQualified: "セミファイナル進出",
             legendTiebreak: "タイブレーク（勝点が同点）",
             legendTieNote: "数字 = 同点チーム数",
             legendEliminated: "レギュラーステージ敗退",
+            hoverQualified: "進出",
+            hoverTiebreaker: "タイブレーク",
+            hoverEliminated: "敗退",
             tipHover: "セルにカーソルで同一シナリオをハイライト。クリックでそのシナリオに合わせてフィルターを設定します。",
             tipHover2: "各セルは、残り4試合の勝・分・負の組み合わせ1通りを示しています。",
             "callout-apina": "APINA VRAMeSは最終戦に勝っても、敗退する可能性があります。",
@@ -186,10 +206,14 @@ function initI18n() {
             whatIf: "假设赛果是……",
             clear: "清空",
             views: "各队情况图",
+            teams: "队",
             legendQualified: "晋级季后赛",
             legendTiebreak: "比较 pt / 胜负关系",
             legendTieNote: "数字 = 同分队伍数量",
             legendEliminated: "常规赛淘汰",
+            hoverQualified: "晋级",
+            hoverTiebreaker: "破平",
+            hoverEliminated: "淘汰",
             tipHover: "鼠标悬停高亮同一情景。点击格子可将赛果自动切换到该情景。",
             tipHover2: "每个单元格代表剩余4场比赛中一种胜/平/负的组合。",
             "callout-apina": "就算 APINA VRAMeS 获胜，在最糟糕的几种情况下仍然可能出局。",
@@ -385,23 +409,38 @@ function formatResultLabel(mid, val) {
 }
 
 function showTooltip(e, scenario) {
-    if (!tooltipEl) return;
+  if (!tooltipEl) return;
 
-    const r = scenario.results || {};
-    tooltipEl.innerHTML = [
-        formatResultLabel("m1", r.m1),
-        formatResultLabel("m2", r.m2),
-        formatResultLabel("m3", r.m3),
-        formatResultLabel("m4", r.m4),
-    ].join("<br>");
+  const r = scenario.results || {};
+  const lines = [
+    formatResultLabel("m1", r.m1),
+    formatResultLabel("m2", r.m2),
+    formatResultLabel("m3", r.m3),
+    formatResultLabel("m4", r.m4),
+  ];
 
-    tooltipEl.hidden = false;
-    moveTooltip(e);
+  const out = summarizeOutcome(scenario);
+
+  lines.push("<hr>");
+
+  if (out.green.length)
+    lines.push(`<b>${t("hoverQualified")}: </b> ${out.green.join(", ")}`);
+
+  if (out.yellow.length)
+    lines.push(
+      `<b>${t("hoverTiebreaker")}`+ (out.yellow.length > 1 ? ` (${out.yellow.length}${t("teams")})` : "") + `: </b> ${out.yellow.join(", ")}`
+    );
+
+  if (out.red.length)
+    lines.push(`<b>${t("hoverEliminated")}: </b> ${out.red.join(", ")}`);
+
+  tooltipEl.innerHTML = lines.join("<br>");
+  tooltipEl.hidden = false;
+  moveTooltip(e);
 }
 
 function moveTooltip(e) {
     if (!tooltipEl) return;
-    // 让 tooltip 不出屏幕（简单处理）
     const pad = 12;
     const x = Math.min(window.innerWidth - 220, e.clientX + pad);
     const y = Math.min(window.innerHeight - 120, e.clientY + pad);
@@ -413,6 +452,20 @@ function hideTooltip() {
     if (!tooltipEl) return;
     tooltipEl.hidden = true;
 }
+
+function summarizeOutcome(scenario) {
+  const out = {
+    green: [],
+    yellow: [],
+    red: []
+  };
+
+  for (const [team, info] of Object.entries(scenario.byTeam || {})) {
+    out[info.bucket]?.push(team);
+  }
+  return out;
+}
+
 
 /**
  * Callouts
@@ -457,3 +510,4 @@ window.addEventListener("resize", () => {
     clearTimeout(window.__calloutTimer);
     window.__calloutTimer = setTimeout(drawCalloutsSimple, 60);
 });
+
