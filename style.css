@@ -11,6 +11,12 @@ main{
   }
 }
 
+.github-link {
+    color: white;
+}
+
+
+
 body {
   font-family: system-ui, sans-serif;
   margin: 20px;
