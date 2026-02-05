@@ -80,6 +80,8 @@ function renderAllViews() {
 
     // After rendering, apply hover/filter once
     updateHighlight();
+
+    drawCalloutsSimple();
 }
 
 function renderBars() {
@@ -143,7 +145,7 @@ function createEmptyCell() {
 function initI18n() {
     I18N = {
         en: {
-            title: "BEMANI PRO LEAGUE S5 SDVX Qualification Scenarios (After Regular Stage - Game 10)",
+            title: "BEMANI PRO LEAGUE S5 SDVX Playoff Qualification Scenarios (After Regular Stage - Game 10)",
             subtitle: "Outcome visualization for all remaining W/D/L combinations.",
             whatIf: "What if… (Match Results)",
             views: "Views",
@@ -154,7 +156,10 @@ function initI18n() {
             legendEliminated: "Eliminated",
             tipHover: "Hover a cell to highlight the same scenario across views. Click a cell to set filters to match that scenario.",
             tipHover2: "Each cell represents one W/D/L combination across the remaining 4 matches.",
+            "callout-apina": "APINA VRAMeS might still be eliminated even if they win their final game.",
+            "callout-fiveway": "If everything aligns, FIVE teams could end up tied on VP — forcing a chaotic tiebreaker scenario.",
             noteGiGO: "9 blocks, each contains a W/D/L sceanrio combination regarding 2 matches of GiGO."
+
         },
         ja: {
             title: "BEMANI PRO LEAGUE S5 SDVX 勝敗別・セミファイナル進出シナリオ (レギュラーステージ 第10試合終了時点)",
@@ -168,6 +173,8 @@ function initI18n() {
             legendEliminated: "レギュラーステージ敗退",
             tipHover: "セルにカーソルで同一シナリオをハイライト。クリックでそのシナリオに合わせてフィルターを設定します。",
             tipHover2: "各セルは、残り4試合の勝・分・負の組み合わせ1通りを示しています。",
+            "callout-apina": "APINA VRAMeSは最終戦に勝っても、敗退する可能性があります。",
+            "callout-fiveway": "条件がすべて噛み合うと、5チームが勝点で同率となり、混沌としたタイブレークに突入する可能性も…！？",
             noteGiGO: "全9ブロックで、各ブロックはGiGOの2試合における勝敗（W/D/L）のシナリオ1通りを表しています。"
         },
         zh: {
@@ -182,6 +189,8 @@ function initI18n() {
             legendEliminated: "常规赛淘汰",
             tipHover: "鼠标悬停高亮同一情景。点击格子可将赛果自动切换到该情景。",
             tipHover2: "每个单元格代表剩余4场比赛中一种胜/平/负的组合。",
+            "callout-apina": "就算 APINA VRAMeS 获胜，在最糟糕的几种情况下仍然可能出局。",
+            "callout-fiveway": "有一种最离谱的剧本——5只队伍的胜分甚至会完全相同，并列第三，直接进入完全无法预测的破平环节…！？",
             noteGiGO: "9个区域中，每一个区域表示一种 GiGO 自己参与的两场比赛的胜/平/负情景组合。"
         }
     };
@@ -227,10 +236,20 @@ function createCellEl(scenario, team) {
 
     // Hover tooltips
     el.addEventListener("mouseenter", (e) => showTooltip(e, scenario));
-    el.addEventListener("mousemove",  (e) => moveTooltip(e));
+    el.addEventListener("mousemove", (e) => moveTooltip(e));
     el.addEventListener("mouseleave", () => hideTooltip());
 
     allCells.push({ el, sid: scenario.id, scenario });
+
+    // Hardcoded callouts
+    if (team === "APINA" && scenario.id === "S55") {
+        el.dataset.callout = "apinaWinStillOut";
+    }
+    if (team === "SILKHAT" && scenario.id === "S54") {
+        el.dataset.callout = "fivewayTie";
+    }
+
+
     return el;
 }
 
@@ -356,38 +375,82 @@ function updateHighlight() {
  */
 const tooltipEl = document.getElementById("tooltip");
 
-function formatResultLabel(mid, val){
-  const m = (DATA?.meta?.matches || []).find(x => x.id === mid);
-  const label = m ? m.label : mid;
-  return `${label}: ${val}`;
+function formatResultLabel(mid, val) {
+    const m = (DATA?.meta?.matches || []).find(x => x.id === mid);
+    const label = m ? m.label : mid;
+    return `${label}: ${val}`;
 }
 
-function showTooltip(e, scenario){
-  if (!tooltipEl) return;
+function showTooltip(e, scenario) {
+    if (!tooltipEl) return;
 
-  const r = scenario.results || {};
-  tooltipEl.innerHTML = [
-    formatResultLabel("m1", r.m1),
-    formatResultLabel("m2", r.m2),
-    formatResultLabel("m3", r.m3),
-    formatResultLabel("m4", r.m4),
-  ].join("<br>");
+    const r = scenario.results || {};
+    tooltipEl.innerHTML = [
+        formatResultLabel("m1", r.m1),
+        formatResultLabel("m2", r.m2),
+        formatResultLabel("m3", r.m3),
+        formatResultLabel("m4", r.m4),
+    ].join("<br>");
 
-  tooltipEl.hidden = false;
-  moveTooltip(e);
+    tooltipEl.hidden = false;
+    moveTooltip(e);
 }
 
-function moveTooltip(e){
-  if (!tooltipEl) return;
-  // 让 tooltip 不出屏幕（简单处理）
-  const pad = 12;
-  const x = Math.min(window.innerWidth  - 220, e.clientX + pad);
-  const y = Math.min(window.innerHeight - 120, e.clientY + pad);
-  tooltipEl.style.left = `${x}px`;
-  tooltipEl.style.top  = `${y}px`;
+function moveTooltip(e) {
+    if (!tooltipEl) return;
+    // 让 tooltip 不出屏幕（简单处理）
+    const pad = 12;
+    const x = Math.min(window.innerWidth - 220, e.clientX + pad);
+    const y = Math.min(window.innerHeight - 120, e.clientY + pad);
+    tooltipEl.style.left = `${x}px`;
+    tooltipEl.style.top = `${y}px`;
 }
 
-function hideTooltip(){
-  if (!tooltipEl) return;
-  tooltipEl.hidden = true;
+function hideTooltip() {
+    if (!tooltipEl) return;
+    tooltipEl.hidden = true;
 }
+
+/**
+ * Callouts
+ */
+function placeCallout(calloutId, cellSelector, dx, dy) {
+    const root = document.getElementById("viewsRoot");
+    const bubble = document.getElementById(calloutId);
+    const cell = document.querySelector(cellSelector);
+    if (!root || !bubble || !cell) {
+        if (bubble) bubble.style.display = "none";
+        return;
+    }
+
+    const rr = root.getBoundingClientRect();
+    const rc = cell.getBoundingClientRect();
+
+    const x = (rc.left - rr.left) + dx;
+    const y = (rc.top - rr.top) + dy;
+
+    bubble.style.left = `${Math.round(x)}px`;
+    bubble.style.top = `${Math.round(y)}px`;
+    bubble.style.display = "block";
+}
+
+function drawCalloutsSimple() {
+    placeCallout(
+        "callout-apina",
+        '.cell[data-callout="apinaWinStillOut"]',
+        -251,  // dx
+        -60   // dy
+    );
+
+    placeCallout(
+        "callout-fiveway",
+        '.cell[data-callout="fivewayTie"]',
+        -131,  // dx
+        -75   // dy
+    );
+}
+
+window.addEventListener("resize", () => {
+    clearTimeout(window.__calloutTimer);
+    window.__calloutTimer = setTimeout(drawCalloutsSimple, 60);
+});

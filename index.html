@@ -18,10 +18,10 @@
         </div>
 
         <div class="lang-switch" role="group" aria-label="Language">
-  <button type="button" class="lang-btn" data-lang="en">English</button>
-  <button type="button" class="lang-btn" data-lang="ja">日本語</button>
-  <button type="button" class="lang-btn" data-lang="zh">中文</button>
-</div>
+            <button type="button" class="lang-btn" data-lang="en">English</button>
+            <button type="button" class="lang-btn" data-lang="ja">日本語</button>
+            <button type="button" class="lang-btn" data-lang="zh">中文</button>
+        </div>
 
 
     </header>
@@ -37,7 +37,7 @@
             <!-- app.js will populate match rows into this container -->
             <div class="match-filters" aria-label="Match filters"></div>
 
-            <div class="hint" >
+            <div class="hint">
                 <p data-i18n="tipHover">
                     Hover a cell to highlight the same scenario across views.
                     Click a cell to set filters to match that scenario.
@@ -49,211 +49,227 @@
                     <a class="github-link" href="https://github.com/ritashim/bpls5-sdvx-r10-scenarios">GitHub</a>
                 </p>
                 <p class="github-info">
-                    Inspired by the classic <a class="github-link" href="https://rocket3989.github.io/worlds-2021/">Worlds Group Advancement visualization</a> by Collin.
+                    Inspired by the classic <a class="github-link"
+                        href="https://rocket3989.github.io/worlds-2021/">Worlds Group Advancement visualization</a> by
+                    Collin.
                 </p>
             </div>
         </section>
 
         <!-- Views -->
         <section id="views" class="panel">
-            <div class="panel-head">
-                <h2 data-i18n="views">Views</h2>
-                <div class="legends">
-                    <div class="legend" aria-label="Legend">
-                        <div class="legend-item">
-                            <span class="swatch-green"></span>
-                            <span data-i18n="legendQualified">Qualified to Playoffs</span>
-                        </div>
-                        <div class="legend-item">
-                            <span class="swatch-yellow"></span>
-                            <span>
-                                <span data-i18n="legendTiebreak">Tiebreaker</span>
-                                <span class="legend-note" data-i18n="legendTieNote">Numbers = Number of tied teams</span>
-                            </span>
-                        </div>
-                        <div class="legend-item">
-                            <span class="swatch-red"></span>
-                            <span data-i18n="legendEliminated">Eliminated</span>
+            <div id="viewsRoot" class="views-root">
+                <div class="panel-head">
+                    <h2 data-i18n="views">Views</h2>
+                    <div class="legends">
+                        <div class="legend" aria-label="Legend">
+                            <div class="legend-item">
+                                <span class="swatch-green"></span>
+                                <span data-i18n="legendQualified">Qualified to Playoffs</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="swatch-yellow"></span>
+                                <span>
+                                    <span data-i18n="legendTiebreak">Tiebreaker</span>
+                                    <span class="legend-note" data-i18n="legendTieNote">Numbers = Number of tied
+                                        teams</span>
+                                </span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="swatch-red"></span>
+                                <span data-i18n="legendEliminated">Eliminated</span>
+                            </div>
                         </div>
                     </div>
                 </div>
+
+                <!-- 6-team bar spectrum -->
+                <div class="view-grid">
+                    <div class="team-view" data-team="LEISURELAND">
+                        <div class="team-head">
+                            <h3>LEISURELAND</h3>
+                        </div>
+                        <div class="rows">
+                            <div class="row" data-self="W">
+                                <div class="row-label">W</div>
+                                <div class="bar"></div>
+                            </div>
+                            <div class="row" data-self="D">
+                                <div class="row-label">D</div>
+                                <div class="bar"></div>
+                            </div>
+                            <div class="row" data-self="L">
+                                <div class="row-label">L</div>
+                                <div class="bar"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="team-view" data-team="ROUND1">
+                        <div class="team-head">
+                            <h3>ROUND1</h3>
+                        </div>
+                        <div class="rows">
+                            <div class="row" data-self="W">
+                                <div class="row-label">W</div>
+                                <div class="bar"></div>
+                            </div>
+                            <div class="row" data-self="D">
+                                <div class="row-label">D</div>
+                                <div class="bar"></div>
+                            </div>
+                            <div class="row" data-self="L">
+                                <div class="row-label">L</div>
+                                <div class="bar"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="team-view" data-team="Tradz">
+                        <div class="team-head">
+                            <h3>TAITO STATION Tradz</h3>
+                        </div>
+                        <div class="rows">
+                            <div class="row" data-self="W">
+                                <div class="row-label">W</div>
+                                <div class="bar"></div>
+                            </div>
+                            <div class="row" data-self="D">
+                                <div class="row-label">D</div>
+                                <div class="bar"></div>
+                            </div>
+                            <div class="row" data-self="L">
+                                <div class="row-label">L</div>
+                                <div class="bar"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="team-view" data-team="GAME PANIC">
+                        <div class="team-head">
+                            <h3>GAME PANIC</h3>
+                        </div>
+                        <div class="rows">
+                            <div class="row" data-self="W">
+                                <div class="row-label">W</div>
+                                <div class="bar"></div>
+                            </div>
+                            <div class="row" data-self="D">
+                                <div class="row-label">D</div>
+                                <div class="bar"></div>
+                            </div>
+                            <div class="row" data-self="L">
+                                <div class="row-label">L</div>
+                                <div class="bar"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="team-view" data-team="APINA">
+                        <div class="team-head">
+                            <h3>APINA VRAMeS</h3>
+                        </div>
+                        <div class="rows">
+                            <div class="row" data-self="W">
+                                <div class="row-label">W</div>
+                                <div class="bar"></div>
+                            </div>
+                            <div class="row" data-self="D">
+                                <div class="row-label">D</div>
+                                <div class="bar"></div>
+                            </div>
+                            <div class="row" data-self="L">
+                                <div class="row-label">L</div>
+                                <div class="bar"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="team-view" data-team="SILKHAT">
+                        <div class="team-head">
+                            <h3>SILKHAT</h3>
+                        </div>
+                        <div class="rows">
+                            <div class="row" data-self="W">
+                                <div class="row-label">W</div>
+                                <div class="bar"></div>
+                            </div>
+                            <div class="row" data-self="D">
+                                <div class="row-label">D</div>
+                                <div class="bar"></div>
+                            </div>
+                            <div class="row" data-self="L">
+                                <div class="row-label">L</div>
+                                <div class="bar"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- GiGO 9x9 -->
+                <div class="team-view gigo" data-team="GiGO">
+                    <div class="team-head">
+                        <h3>GiGO</h3>
+                        <div class="team-note" data-i18n="noteGiGO">9 blocks, each contains a W/D/L sceanrio combination
+                            regarding 2 matches of GiGO.</div>
+                    </div>
+
+                    <div class="gigo-board">
+                        <!-- row 0 -->
+                        <div class="gigo-block" data-r="0" data-c="0">
+                            <div class="block-title"></div>
+                            <div class="grid-3x3"></div>
+                        </div>
+                        <div class="gigo-block" data-r="0" data-c="1">
+                            <div class="block-title"></div>
+                            <div class="grid-3x3"></div>
+                        </div>
+                        <div class="gigo-block" data-r="0" data-c="2">
+                            <div class="block-title"></div>
+                            <div class="grid-3x3"></div>
+                        </div>
+
+                        <!-- row 1 -->
+                        <div class="gigo-block" data-r="1" data-c="0">
+                            <div class="block-title"></div>
+                            <div class="grid-3x3"></div>
+                        </div>
+                        <div class="gigo-block" data-r="1" data-c="1">
+                            <div class="block-title"></div>
+                            <div class="grid-3x3"></div>
+                        </div>
+                        <div class="gigo-block" data-r="1" data-c="2">
+                            <div class="block-title"></div>
+                            <div class="grid-3x3"></div>
+                        </div>
+
+                        <!-- row 2 -->
+                        <div class="gigo-block" data-r="2" data-c="0">
+                            <div class="block-title"></div>
+                            <div class="grid-3x3"></div>
+                        </div>
+                        <div class="gigo-block" data-r="2" data-c="1">
+                            <div class="block-title"></div>
+                            <div class="grid-3x3"></div>
+                        </div>
+                        <div class="gigo-block" data-r="2" data-c="2">
+                            <div class="block-title"></div>
+                            <div class="grid-3x3"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="callout-apina" class="callout" data-i18n="callout-apina">
+                APINA might still be eliminated<br/>
+                even if they win.
+                </div>
+
+                <div id="callout-fiveway" class="callout" data-i18n="callout-fiveway">
+                If everything aligns,<br/>
+                FIVE teams could tie on VP (!?)
+                </div>
+
             </div>
-
-            <!-- 6-team bar spectrum -->
-            <div class="view-grid">
-                <div class="team-view" data-team="LEISURELAND">
-                    <div class="team-head">
-                        <h3>LEISURELAND</h3>
-                    </div>
-                    <div class="rows">
-                        <div class="row" data-self="W">
-                            <div class="row-label">W</div>
-                            <div class="bar"></div>
-                        </div>
-                        <div class="row" data-self="D">
-                            <div class="row-label">D</div>
-                            <div class="bar"></div>
-                        </div>
-                        <div class="row" data-self="L">
-                            <div class="row-label">L</div>
-                            <div class="bar"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="team-view" data-team="ROUND1">
-                    <div class="team-head">
-                        <h3>ROUND1</h3>
-                    </div>
-                    <div class="rows">
-                        <div class="row" data-self="W">
-                            <div class="row-label">W</div>
-                            <div class="bar"></div>
-                        </div>
-                        <div class="row" data-self="D">
-                            <div class="row-label">D</div>
-                            <div class="bar"></div>
-                        </div>
-                        <div class="row" data-self="L">
-                            <div class="row-label">L</div>
-                            <div class="bar"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="team-view" data-team="Tradz">
-                    <div class="team-head">
-                        <h3>TAITO STATION Tradz</h3>
-                    </div>
-                    <div class="rows">
-                        <div class="row" data-self="W">
-                            <div class="row-label">W</div>
-                            <div class="bar"></div>
-                        </div>
-                        <div class="row" data-self="D">
-                            <div class="row-label">D</div>
-                            <div class="bar"></div>
-                        </div>
-                        <div class="row" data-self="L">
-                            <div class="row-label">L</div>
-                            <div class="bar"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="team-view" data-team="GAME PANIC">
-                    <div class="team-head">
-                        <h3>GAME PANIC</h3>
-                    </div>
-                    <div class="rows">
-                        <div class="row" data-self="W">
-                            <div class="row-label">W</div>
-                            <div class="bar"></div>
-                        </div>
-                        <div class="row" data-self="D">
-                            <div class="row-label">D</div>
-                            <div class="bar"></div>
-                        </div>
-                        <div class="row" data-self="L">
-                            <div class="row-label">L</div>
-                            <div class="bar"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="team-view" data-team="APINA">
-                    <div class="team-head">
-                        <h3>APINA VRAMeS</h3>
-                    </div>
-                    <div class="rows">
-                        <div class="row" data-self="W">
-                            <div class="row-label">W</div>
-                            <div class="bar"></div>
-                        </div>
-                        <div class="row" data-self="D">
-                            <div class="row-label">D</div>
-                            <div class="bar"></div>
-                        </div>
-                        <div class="row" data-self="L">
-                            <div class="row-label">L</div>
-                            <div class="bar"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="team-view" data-team="SILKHAT">
-                    <div class="team-head">
-                        <h3>SILKHAT</h3>
-                    </div>
-                    <div class="rows">
-                        <div class="row" data-self="W">
-                            <div class="row-label">W</div>
-                            <div class="bar"></div>
-                        </div>
-                        <div class="row" data-self="D">
-                            <div class="row-label">D</div>
-                            <div class="bar"></div>
-                        </div>
-                        <div class="row" data-self="L">
-                            <div class="row-label">L</div>
-                            <div class="bar"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- GiGO 9x9 -->
-            <div class="team-view gigo" data-team="GiGO">
-                <div class="team-head">
-                    <h3>GiGO</h3>
-                    <div class="team-note" data-i18n="noteGiGO">9 blocks, each contains a W/D/L sceanrio combination regarding 2 matches of GiGO.</div>
-                </div>
-
-                <div class="gigo-board">
-                    <!-- row 0 -->
-                    <div class="gigo-block" data-r="0" data-c="0">
-                        <div class="block-title"></div>
-                        <div class="grid-3x3"></div>
-                    </div>
-                    <div class="gigo-block" data-r="0" data-c="1">
-                        <div class="block-title"></div>
-                        <div class="grid-3x3"></div>
-                    </div>
-                    <div class="gigo-block" data-r="0" data-c="2">
-                        <div class="block-title"></div>
-                        <div class="grid-3x3"></div>
-                    </div>
-
-                    <!-- row 1 -->
-                    <div class="gigo-block" data-r="1" data-c="0">
-                        <div class="block-title"></div>
-                        <div class="grid-3x3"></div>
-                    </div>
-                    <div class="gigo-block" data-r="1" data-c="1">
-                        <div class="block-title"></div>
-                        <div class="grid-3x3"></div>
-                    </div>
-                    <div class="gigo-block" data-r="1" data-c="2">
-                        <div class="block-title"></div>
-                        <div class="grid-3x3"></div>
-                    </div>
-
-                    <!-- row 2 -->
-                    <div class="gigo-block" data-r="2" data-c="0">
-                        <div class="block-title"></div>
-                        <div class="grid-3x3"></div>
-                    </div>
-                    <div class="gigo-block" data-r="2" data-c="1">
-                        <div class="block-title"></div>
-                        <div class="grid-3x3"></div>
-                    </div>
-                    <div class="gigo-block" data-r="2" data-c="2">
-                        <div class="block-title"></div>
-                        <div class="grid-3x3"></div>
-                    </div>
-                </div>
-            </div>
-
         </section>
     </main>
 

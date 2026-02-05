@@ -194,3 +194,41 @@ button.opt.active {
   white-space: nowrap;
   transform: translate(10px, 10px);
 }
+
+/* viewsRoot must be positioning context */
+.views-root{
+  position: relative;
+}
+
+/* callout bubble */
+.callout{
+  position: absolute;
+  max-width: 260px;
+  padding: 8px 10px;
+  border: 1px solid rgba(255,255,255,0.25);
+  background: rgba(0,0,0,0.70);
+  color: rgba(255,255,255,0.92);
+  font-size: 12px;
+  line-height: 1.25;
+  border-radius: 10px;
+  pointer-events: none;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+  z-index: 50;
+}
+
+/* triangle arrow */
+.callout::after{
+  content:"";
+  position:absolute;
+  width:0;
+  height:0;
+  border:8px solid transparent;
+  border-top-color: rgba(255,255,255,0.25);
+  bottom:-16px;
+  left: 250px;
+}
+
+/* Optional: distinct styles */
+#callout-fiveway::after{
+  left: 130px;
+}
