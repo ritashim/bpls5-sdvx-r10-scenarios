@@ -225,6 +225,11 @@ function createCellEl(scenario, team) {
         updateHighlight();
     });
 
+    // Hover tooltips
+    el.addEventListener("mouseenter", (e) => showTooltip(e, scenario));
+    el.addEventListener("mousemove",  (e) => moveTooltip(e));
+    el.addEventListener("mouseleave", () => hideTooltip());
+
     allCells.push({ el, sid: scenario.id, scenario });
     return el;
 }
@@ -344,4 +349,45 @@ function updateHighlight() {
         // Optional: dim unmatched cells strongly
         el.classList.toggle("dim", !match);
     });
+}
+
+/**
+ * Hover tips
+ */
+const tooltipEl = document.getElementById("tooltip");
+
+function formatResultLabel(mid, val){
+  const m = (DATA?.meta?.matches || []).find(x => x.id === mid);
+  const label = m ? m.label : mid;
+  return `${label}: ${val}`;
+}
+
+function showTooltip(e, scenario){
+  if (!tooltipEl) return;
+
+  const r = scenario.results || {};
+  tooltipEl.innerHTML = [
+    formatResultLabel("m1", r.m1),
+    formatResultLabel("m2", r.m2),
+    formatResultLabel("m3", r.m3),
+    formatResultLabel("m4", r.m4),
+  ].join("<br>");
+
+  tooltipEl.hidden = false;
+  moveTooltip(e);
+}
+
+function moveTooltip(e){
+  if (!tooltipEl) return;
+  // 让 tooltip 不出屏幕（简单处理）
+  const pad = 12;
+  const x = Math.min(window.innerWidth  - 220, e.clientX + pad);
+  const y = Math.min(window.innerHeight - 120, e.clientY + pad);
+  tooltipEl.style.left = `${x}px`;
+  tooltipEl.style.top  = `${y}px`;
+}
+
+function hideTooltip(){
+  if (!tooltipEl) return;
+  tooltipEl.hidden = true;
 }
