@@ -11,11 +11,14 @@ main{
   }
 }
 
-.github-link {
-    color: white;
+.github-info {
+    color: #777;
+    font-size: 11px;
 }
 
-
+.github-link {
+    color: #777;
+}
 
 body {
   font-family: system-ui, sans-serif;
