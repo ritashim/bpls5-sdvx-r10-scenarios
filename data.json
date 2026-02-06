@@ -3,19 +3,27 @@
     "matches": [
       {
         "id": "m1",
-        "label": "LEISURELAND vs APINA"
+        "label": "LEISURELAND vs APINA",
+        "team1": "LEISURELAND",
+        "team2": "APINA"
       },
       {
         "id": "m2",
-        "label": "ROUND1 vs GiGO"
+        "label": "ROUND1 vs GiGO",
+        "team1": "ROUND1",
+        "team2": "GiGO"
       },
       {
         "id": "m3",
-        "label": "Tradz vs GiGO"
+        "label": "Tradz vs GiGO",
+        "team1": "Tradz",
+        "team2": "GiGO"
       },
       {
         "id": "m4",
-        "label": "GAME PANIC vs SILKHAT"
+        "label": "GAME PANIC vs SILKHAT",
+        "team1": "GAME PANIC",
+        "team2": "SILKHAT"
       }
     ]
   },

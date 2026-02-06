@@ -307,9 +307,9 @@ function buildMatchFilters(matches) {
         // any / W / D / L
         const options = [
             { key: null, text: "?" },
-            { key: "W", text: "W" },
-            { key: "D", text: "D" },
-            { key: "L", text: "L" }
+            { key: "W", text: teamShort(m.team1) },
+            { key: "D", text: "=" },
+            { key: "L", text: teamShort(m.team2) }
         ];
 
         options.forEach(opt => {
