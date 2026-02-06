@@ -112,11 +112,16 @@ header h1 {
 
 .cell .tie {
   position: absolute;
-  bottom: 2px;
-  right: 2px;
-  font-size: 9px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
   color: #000;
-  font-weight: bold;
+
+  pointer-events: none;
 }
 
 .gigo .grid {
@@ -467,7 +472,7 @@ dialog.ds-popup{
 }
 
 @media (max-width: 480px){
-  :root{
+  .view-grid{
     --cell-w: clamp(9px, 2.4vw, 14px);
     --cell-gap: clamp(1px, 0.6vw, 2px)
   }
