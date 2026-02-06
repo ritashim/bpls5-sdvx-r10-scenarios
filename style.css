@@ -1,3 +1,26 @@
+/**
+  Theme
+*/
+:root{
+  --c-green: #2ecc71;
+  --c-yellow:#f1c40f;
+  --c-red:   #e74c3c;
+
+  --c-green-text: black;
+  --c-yellow-text:black;
+  --c-red-text:   white;
+}
+
+:root[data-theme="cb"]{
+  --c-green: #0072B2;
+  --c-yellow:#E69F00;
+  --c-red:   #CC79A7;
+
+  --c-green-text: white;
+  --c-yellow-text:black;
+  --c-red-text:   black;
+}
+
 main{
   display: grid;
   grid-template-columns: 360px 1fr;
@@ -90,13 +113,13 @@ header h1 {
   box-sizing: border-box;
 }
 
-.cell.green { background: #2ecc71; }
-.cell.yellow { background: #f1c40f; }
-.cell.red { background: #e74c3c; }
+.cell.green { background: var(--c-green); }
+.cell.yellow { background: var(--c-yellow); }
+.cell.red { background: var(--c-red); }
 
-.swatch-green { background: #2ecc71; }
-.swatch-yellow { background: #f1c40f; }
-.swatch-red { background: #e74c3c; }    
+.swatch-green { background: var(--c-green); }
+.swatch-yellow { background: var(--c-yellow); }
+.swatch-red { background: var(--c-red); }    
 
 .swatch-green,
 .swatch-yellow,
@@ -277,7 +300,7 @@ button.opt.active {
 .lang-switch{
   display: grid;
   grid-auto-flow: column;
-  grid-auto-columns: 70px;
+  grid-auto-columns: 90px;
   gap:8px;
   margin-top:8px;
 }
@@ -295,6 +318,22 @@ button.opt.active {
 .lang-btn.active{
   border-color:#fff;
   color:#fff;
+}
+
+.cb-btn{
+  background:#222;
+  color:#ddd;
+  border:1px solid #444;
+  padding:4px 10px;
+  border-radius:10px;
+  cursor:pointer;
+  line-height: 1.2;
+}
+
+.cb-btn.active{
+  background: #f2f2f2;
+  color: #111;
+  border-color: #f2f2f2;
 }
 
 .clear-btn{
@@ -537,17 +576,18 @@ dialog.ds-popup{
 
 /* states */
 .lamp.green{
-  background: #2ecc71;
+  background: var(--c-green);
+  color: var(--c-green-text);
 }
 
 .lamp.yellow{
-  background: #f1c40f;
-  color: black;
+  background: var(--c-yellow);
+  color: var(--c-yellow-text);
 }
 
 .lamp.red{
-  background: #e74c3c;
-  color: white;
+  background: var(--c-red);
+  color: var(--c-red-text);
 }
 
 .lamp.off{

@@ -24,6 +24,8 @@ fetch("data.json")
         updateHighlight();
         initI18n();
         initLangSwitch();
+        initCbBtn();
+
     })
     .catch(err => {
         console.error(err);
@@ -32,6 +34,30 @@ fetch("data.json")
             `<pre style="color:#f88">Error: ${String(err)}</pre>`
         );
     });
+
+/**
+ * Theme (CB)
+ */
+function applyTheme(theme) {
+    // theme: "" | "cb"
+    if (theme) document.documentElement.dataset.theme = theme;
+    else delete document.documentElement.dataset.theme;
+
+    localStorage.setItem("theme", theme || "");
+
+    const btn = document.getElementById("cbToggle");
+    const on = theme === "cb";
+    btn.classList.toggle("active", on);
+    btn.setAttribute("aria-pressed", String(on));
+}
+
+function initCbBtn() {
+    applyTheme(localStorage.getItem("theme") || "");
+    document.getElementById("cbToggle").addEventListener("click", () => {
+        const cur = document.documentElement.dataset.theme || "";
+        applyTheme(cur === "cb" ? "" : "cb");
+    });
+}
 
 /**
  * i18n
@@ -120,40 +146,40 @@ function renderBars() {
 }
 
 function renderGigoGrid() {
-  const root = document.querySelector(".team-view.gigo");
-  const cfg = DATA.views?.gigo;
-  if (!root || !cfg) return;
+    const root = document.querySelector(".team-view.gigo");
+    const cfg = DATA.views?.gigo;
+    if (!root || !cfg) return;
 
-  const blocks = root.querySelectorAll(".gigo-block");
-  blocks.forEach(blockEl => {
-    const r = Number(blockEl.dataset.r);
-    const c = Number(blockEl.dataset.c);
+    const blocks = root.querySelectorAll(".gigo-block");
+    blocks.forEach(blockEl => {
+        const r = Number(blockEl.dataset.r);
+        const c = Number(blockEl.dataset.c);
 
-    const b = cfg.blocks.find(x => x.r === r && x.c === c);
+        const b = cfg.blocks.find(x => x.r === r && x.c === c);
 
-    let title = blockEl.querySelector(".block-title");
-    if (!title) {
-      title = document.createElement("div");
-      title.className = "block-title";
-      blockEl.appendChild(title);
-    }
+        let title = blockEl.querySelector(".block-title");
+        if (!title) {
+            title = document.createElement("div");
+            title.className = "block-title";
+            blockEl.appendChild(title);
+        }
 
-    let grid = blockEl.querySelector(".grid-3x3");
-    if (!grid) {
-      grid = document.createElement("div");
-      grid.className = "grid-3x3";
-      blockEl.appendChild(grid);
-    }
+        let grid = blockEl.querySelector(".grid-3x3");
+        if (!grid) {
+            grid = document.createElement("div");
+            grid.className = "grid-3x3";
+            blockEl.appendChild(grid);
+        }
 
-    // Render
-    grid.innerHTML = "";
+        // Render
+        grid.innerHTML = "";
 
-    (b?.cells || []).forEach(sid => {
-      const s = scenarioById.get(sid);
-      if (!s) return;
-      grid.appendChild(createCellEl(s, "GiGO"));
+        (b?.cells || []).forEach(sid => {
+            const s = scenarioById.get(sid);
+            if (!s) return;
+            grid.appendChild(createCellEl(s, "GiGO"));
+        });
     });
-  });
 }
 
 
@@ -185,7 +211,8 @@ function initI18n() {
             howto2: "Each cell represents one possible W/D/L combination across the remaining 4 matches. Colors indicate the result for each team in that scenario.",
             howto3: "Hover a cell to highlight the same scenario across all views. Click a cell to apply filters matching that scenario.",
             "callout-apina": "APINA VRAMeS <strong>might still be eliminated</strong> even if they win their final game.",
-            "callout-fiveway": "If everything aligns, <strong>FIVE teams</strong> could end up tied on VP — forcing a chaotic tiebreaker scenario."
+            "callout-fiveway": "If everything aligns, <strong>FIVE teams</strong> could end up tied on VP — forcing a chaotic tiebreaker scenario.",
+            colorBlind: "Color Blind"
 
         },
         ja: {
@@ -208,7 +235,8 @@ function initI18n() {
             howto2: "各セルは、残り4試合における勝敗（勝／分／負）の1つの組み合わせを表しています。色はそのシナリオにおける進出状況を示しています。",
             howto3: "セルにカーソルを合わせると、同一シナリオがすべての図でハイライトされます。セルをクリックすると、その結果に対応するシナリオのみが表示されます。",
             "callout-apina": "APINA VRAMeSは最終戦に勝っても、<strong>敗退する可能性があります</strong>。",
-            "callout-fiveway": "条件がすべて噛み合うと、<strong>5チーム</strong>が勝点で同率となり、混沌としたタイブレークに突入する可能性も…！？"
+            "callout-fiveway": "条件がすべて噛み合うと、<strong>5チーム</strong>が勝点で同率となり、混沌としたタイブレークに突入する可能性も…！？",
+            colorBlind: "色覚補正"
         },
         zh: {
             title: "BEMANI PRO LEAGUE S5 SDVX 常规赛第10轮后 晋级形势可视化",
@@ -230,7 +258,8 @@ function initI18n() {
             howto2: "每一个色块代表剩余 4 场比赛中一种胜 / 平 / 负的组合情况。颜色表示该情形下的结果：晋级、需要破平，或被淘汰。",
             howto3: "将鼠标悬停在色块上，可在所有视图中高亮同一种组合情况。点击色块，可筛选出与该情况一致的比赛结果。",
             "callout-apina": "就算 APINA VRAMeS 获胜，在最糟糕的几种情况下<strong>仍然可能出局</strong>。",
-            "callout-fiveway": "有一种最离谱的剧本——<strong>5只队伍</strong>的胜分甚至会完全相同，并列第三，直接进入完全无法预测的破平环节…！？"
+            "callout-fiveway": "有一种最离谱的剧本——<strong>5只队伍</strong>的胜分甚至会完全相同，并列第三，直接进入完全无法预测的破平环节…！？",
+            colorBlind: "色盲模式"
         }
     };
 
@@ -420,9 +449,9 @@ const tooltipMatchEl = document.getElementById("tooltip-match");
 function formatResultLabel(mid, result) {
     const match = (DATA?.meta?.matches || []).find(x => x.id === mid);
     var symbol;
-    if(result === "W") return `<span class="team winner">${match.team1}</span><span class="team symbol"> > </span><span class="team loser">${match.team2}</span>`;
-    if(result === "D") return `<span class="team draw">${match.team1}</span><span class="team symbol"> = </span><span class="team draw">${match.team2}</span>`;
-    if(result === "L") return `<span class="team loser">${match.team1}</span><span class="team symbol"> < </span><span class="team winner">${match.team2}</span>`;
+    if (result === "W") return `<span class="team winner">${match.team1}</span><span class="team symbol"> > </span><span class="team loser">${match.team2}</span>`;
+    if (result === "D") return `<span class="team draw">${match.team1}</span><span class="team symbol"> = </span><span class="team draw">${match.team2}</span>`;
+    if (result === "L") return `<span class="team loser">${match.team1}</span><span class="team symbol"> < </span><span class="team winner">${match.team2}</span>`;
 }
 
 function showTooltip(e, scenario) {
@@ -496,64 +525,64 @@ function summarizeOutcome(scenario) {
 /**
  * Fate lamp
  */
-const TEAMS = ["LEISURELAND","ROUND1","Tradz","GAME PANIC","APINA","SILKHAT","GiGO"]; // 你想显示谁就放谁
+const TEAMS = ["LEISURELAND", "ROUND1", "Tradz", "GAME PANIC", "APINA", "SILKHAT", "GiGO"]; // 你想显示谁就放谁
 
-function getOutcomeBucketForTeam(scenario, team){
-  return scenario.byTeam?.[team]?.bucket; // "green" | "yellow" | "red"
+function getOutcomeBucketForTeam(scenario, team) {
+    return scenario.byTeam?.[team]?.bucket; // "green" | "yellow" | "red"
 }
 
-function updateStatusLights(){
-  const root = document.getElementById("statusLights");
-  if (!root) return;
+function updateStatusLights() {
+    const root = document.getElementById("statusLights");
+    if (!root) return;
 
-  // 取所有 match 的 scenario（去重 sid）
-  const matchedScenarios = [];
-  const seen = new Set();
-  allCells.forEach(({ scenario, sid }) => {
-    if (!seen.has(sid) && scenarioMatchesFilter(scenario)) {
-      seen.add(sid);
-      matchedScenarios.push(scenario);
-    }
-  });
-
-  // 如果用户筛选太严格导致 0 个 match：全部灯灭
-  if (matchedScenarios.length === 0){
-    root.innerHTML = TEAMS.map(t => renderLight(t, null)).join("");
-    return;
-  }
-
-  root.innerHTML = TEAMS.map(team => {
-    const buckets = new Set();
-    matchedScenarios.forEach(s => {
-      const b = getOutcomeBucketForTeam(s, team);
-      if (b) buckets.add(b);
+    // 取所有 match 的 scenario（去重 sid）
+    const matchedScenarios = [];
+    const seen = new Set();
+    allCells.forEach(({ scenario, sid }) => {
+        if (!seen.has(sid) && scenarioMatchesFilter(scenario)) {
+            seen.add(sid);
+            matchedScenarios.push(scenario);
+        }
     });
 
-    // “命运彻底确定”= buckets 只有一种
-    const locked = buckets.size === 1 ? [...buckets][0] : null;
-    return renderLight(team, locked);
-  }).join("");
+    // 如果用户筛选太严格导致 0 个 match：全部灯灭
+    if (matchedScenarios.length === 0) {
+        root.innerHTML = TEAMS.map(t => renderLight(t, null)).join("");
+        return;
+    }
+
+    root.innerHTML = TEAMS.map(team => {
+        const buckets = new Set();
+        matchedScenarios.forEach(s => {
+            const b = getOutcomeBucketForTeam(s, team);
+            if (b) buckets.add(b);
+        });
+
+        // “命运彻底确定”= buckets 只有一种
+        const locked = buckets.size === 1 ? [...buckets][0] : null;
+        return renderLight(team, locked);
+    }).join("");
 }
 
-function updateStatusLightsDesktop(out){
+function updateStatusLightsDesktop(out) {
     const root = document.getElementById("statusLightsDesktop");
     if (!root) return;
 
     root.innerHTML = TEAMS.map(team => {
-      var locked = null;
-      if(out["red"].includes(team)) locked = "red";
-      if(out["yellow"].includes(team)) locked = "yellow";
-      if(out["green"].includes(team)) locked = "green";
+        var locked = null;
+        if (out["red"].includes(team)) locked = "red";
+        if (out["yellow"].includes(team)) locked = "yellow";
+        if (out["green"].includes(team)) locked = "green";
 
-      return renderLight(team, locked);
+        return renderLight(team, locked);
     }).join("");
 }
 
-function renderLight(team, lockedBucket){
-  const cls = lockedBucket ? lockedBucket : "off";
-  const dotCls = lockedBucket ? lockedBucket : "";
-  const label = teamShort(team); 
-  return `
+function renderLight(team, lockedBucket) {
+    const cls = lockedBucket ? lockedBucket : "off";
+    const dotCls = lockedBucket ? lockedBucket : "";
+    const label = teamShort(team);
+    return `
     <div class="lamp ${lockedBucket ? lockedBucket : "off"}" data-team="${team}">
       <span class="dot ${dotCls}"></span>
       <span>${label}</span>
@@ -562,17 +591,17 @@ function renderLight(team, lockedBucket){
 }
 
 const teamShortNameMap = {
-  "LEISURELAND": "LL",
-  "ROUND1": "R1",
-  "Tradz": "TR",
-  "GAME PANIC": "GP",
-  "APINA": "AP",
-  "GiGO": "GG",
-  "SILKHAT": "SH"
+    "LEISURELAND": "LL",
+    "ROUND1": "R1",
+    "Tradz": "TR",
+    "GAME PANIC": "GP",
+    "APINA": "AP",
+    "GiGO": "GG",
+    "SILKHAT": "SH"
 };
 
 function teamShort(teamMidName) {
-  return teamShortNameMap[teamMidName] ?? teamMidName;
+    return teamShortNameMap[teamMidName] ?? teamMidName;
 }
 
 /**
@@ -627,60 +656,60 @@ let zhClickTimer = null;
 let eggShown = false;
 
 function zhEasterEgg(lang) {
-  if (lang !== "zh") {
-    resetZhEgg();
-    return;
-  }
+    if (lang !== "zh") {
+        resetZhEgg();
+        return;
+    }
 
-  zhClickCount += 1;
+    zhClickCount += 1;
 
-  if (zhClickTimer) clearTimeout(zhClickTimer);
-  zhClickTimer = setTimeout(() => {
-    zhClickCount = 0;
-    zhClickTimer = null;
-  }, 2000);
+    if (zhClickTimer) clearTimeout(zhClickTimer);
+    zhClickTimer = setTimeout(() => {
+        zhClickCount = 0;
+        zhClickTimer = null;
+    }, 2000);
 
-  if (zhClickCount >= 3) {
-    zhClickCount = 0; 
-    toggleEasterEgg();
-  }
+    if (zhClickCount >= 3) {
+        zhClickCount = 0;
+        toggleEasterEgg();
+    }
 }
 
 function toggleEasterEgg() {
-  eggShown = !eggShown;
-  showEasterEgg(eggShown);
+    eggShown = !eggShown;
+    showEasterEgg(eggShown);
 }
 
 function resetZhEgg() {
-  zhClickCount = 0;
-  eggShown = false;
-  if (zhClickTimer) clearTimeout(zhClickTimer);
-  zhClickTimer = null;
-  showEasterEgg(false);
+    zhClickCount = 0;
+    eggShown = false;
+    if (zhClickTimer) clearTimeout(zhClickTimer);
+    zhClickTimer = null;
+    showEasterEgg(false);
 }
 
 function showEasterEgg(shown) {
     const easter = document.getElementById("easter");
     easter.hidden = !shown;
-    if(shown) {
+    if (shown) {
         playDsPopup("ds1", 3);
     }
 }
 
 var dsPopupPlaying = false;
-function playDsPopup( id, time=10 ) {
+function playDsPopup(id, time = 10) {
     console.log("YOU DUNAIED")
-	let dialog = document.getElementById(id);
-	dialog.style.animationDuration = time+'s';
-	dialog.setAttribute('open',true);
-	// allows only one animation playing at a time.
-	let ddialog = function () { 
-			dialog.removeAttribute('open');
-			dialog.removeEventListener('animationend',ddialog,false);
-			dsPopupPlaying = false;
-		};
-	if (!dsPopupPlaying) {
-		dialog.addEventListener('animationend',ddialog,false);
-		dsPopupPlaying = true;
-	}
+    let dialog = document.getElementById(id);
+    dialog.style.animationDuration = time + 's';
+    dialog.setAttribute('open', true);
+    // allows only one animation playing at a time.
+    let ddialog = function () {
+        dialog.removeAttribute('open');
+        dialog.removeEventListener('animationend', ddialog, false);
+        dsPopupPlaying = false;
+    };
+    if (!dsPopupPlaying) {
+        dialog.addEventListener('animationend', ddialog, false);
+        dsPopupPlaying = true;
+    }
 }
