@@ -44,7 +44,7 @@ function applyI18n(lang) {
 
     document.querySelectorAll("[data-i18n]").forEach(el => {
         const key = el.dataset.i18n;
-        if (dict[key] != null) el.textContent = dict[key];
+        if (dict[key] != null) el.innerHTML = dict[key];
     });
 }
 
@@ -64,6 +64,7 @@ function initLangSwitch() {
         btn.addEventListener("click", () => {
             const next = btn.dataset.lang;
             localStorage.setItem("lang", next);
+            zhEasterEgg(next);
             applyI18n(next);
             markActiveLang(next);
         });
@@ -76,7 +77,7 @@ function markActiveLang(lang) {
     });
 }
 
-function t(key){
+function t(key) {
     return I18N[document.documentElement.lang]?.[key] ?? I18N.en[key];
 }
 
@@ -171,8 +172,8 @@ function initI18n() {
             howto1: "The charts visualize all possible outcomes across the remaining matches and how each team could advance.",
             howto2: "Each cell represents one possible W/D/L combination across the remaining 4 matches. Colors indicate the result for each team in that scenario.",
             howto3: "Hover a cell to highlight the same scenario across all views. Click a cell to apply filters matching that scenario.",
-            "callout-apina": "APINA VRAMeS might still be eliminated even if they win their final game.",
-            "callout-fiveway": "If everything aligns, FIVE teams could end up tied on VP — forcing a chaotic tiebreaker scenario.",
+            "callout-apina": "APINA VRAMeS <strong>might still be eliminated</strong> even if they win their final game.",
+            "callout-fiveway": "If everything aligns, <strong>FIVE teams</strong> could end up tied on VP — forcing a chaotic tiebreaker scenario.",
             noteGiGO: "9 blocks, each contains a W/D/L sceanrio combination regarding 2 matches of GiGO."
 
         },
@@ -195,8 +196,8 @@ function initI18n() {
             howto1: "以下の図は、残り試合のすべての結果パターンにおいて、各チームがどのように進出状況が変化するかを可視化したものです。",
             howto2: "各セルは、残り4試合における勝敗（勝／分／負）の1つの組み合わせを表しています。色はそのシナリオにおける進出状況を示しています。",
             howto3: "セルにカーソルを合わせると、同一シナリオがすべての図でハイライトされます。セルをクリックすると、その結果に対応するシナリオのみが表示されます。",
-            "callout-apina": "APINA VRAMeSは最終戦に勝っても、敗退する可能性があります。",
-            "callout-fiveway": "条件がすべて噛み合うと、5チームが勝点で同率となり、混沌としたタイブレークに突入する可能性も…！？",
+            "callout-apina": "APINA VRAMeSは最終戦に勝っても、<strong>敗退する可能性があります</strong>。",
+            "callout-fiveway": "条件がすべて噛み合うと、<strong>5チーム</strong>が勝点で同率となり、混沌としたタイブレークに突入する可能性も…！？",
             noteGiGO: "全9ブロックで、各ブロックはGiGOの2試合における勝敗（W/D/L）のシナリオ1通りを表しています。"
         },
         zh: {
@@ -218,8 +219,8 @@ function initI18n() {
             howto1: "图表展示了在剩余比赛的所有可能结果下，各支队伍的晋级情况变化。",
             howto2: "每一个色块代表剩余 4 场比赛中一种胜 / 平 / 负的组合情况。颜色表示该情形下的结果：晋级、需要破平，或被淘汰。",
             howto3: "将鼠标悬停在色块上，可在所有视图中高亮同一种组合情况。点击色块，可筛选出与该情况一致的比赛结果。",
-            "callout-apina": "就算 APINA VRAMeS 获胜，在最糟糕的几种情况下仍然可能出局。",
-            "callout-fiveway": "有一种最离谱的剧本——5只队伍的胜分甚至会完全相同，并列第三，直接进入完全无法预测的破平环节…！？",
+            "callout-apina": "就算 APINA VRAMeS 获胜，在最糟糕的几种情况下<strong>仍然可能出局</strong>。",
+            "callout-fiveway": "有一种最离谱的剧本——<strong>5只队伍</strong>的胜分甚至会完全相同，并列第三，直接进入完全无法预测的破平环节…！？",
             noteGiGO: "9个区域中，每一个区域表示一种 GiGO 自己参与的两场比赛的胜/平/负情景组合。"
         }
     };
@@ -411,61 +412,61 @@ function formatResultLabel(mid, val) {
 }
 
 function showTooltip(e, scenario) {
-  if (!tooltipEl) return;
+    if (!tooltipEl) return;
 
-  const r = scenario.results || {};
-  const lines = [
-    formatResultLabel("m1", r.m1),
-    formatResultLabel("m2", r.m2),
-    formatResultLabel("m3", r.m3),
-    formatResultLabel("m4", r.m4),
-  ];
+    const r = scenario.results || {};
+    const lines = [
+        formatResultLabel("m1", r.m1),
+        formatResultLabel("m2", r.m2),
+        formatResultLabel("m3", r.m3),
+        formatResultLabel("m4", r.m4),
+    ];
 
-  const out = summarizeOutcome(scenario);
+    const out = summarizeOutcome(scenario);
 
-  lines.push("<hr>");
+    lines.push("<hr>");
 
-  if (out.green.length)
-    lines.push(`<b>${t("hoverQualified")}: </b> ${out.green.join(", ")}`);
+    if (out.green.length)
+        lines.push(`<b>${t("hoverQualified")}: </b> ${out.green.join(", ")}`);
 
-  if (out.yellow.length)
-    lines.push(
-      `<b>${t("hoverTiebreaker")}`+ (out.yellow.length > 1 ? ` (${out.yellow.length}${t("teams")})` : "") + `: </b> ${out.yellow.join(", ")}`
-    );
+    if (out.yellow.length)
+        lines.push(
+            `<b>${t("hoverTiebreaker")}` + (out.yellow.length > 1 ? ` (${out.yellow.length}${t("teams")})` : "") + `: </b> ${out.yellow.join(", ")}`
+        );
 
-  if (out.red.length)
-    lines.push(`<b>${t("hoverEliminated")}: </b> ${out.red.join(", ")}`);
+    if (out.red.length)
+        lines.push(`<b>${t("hoverEliminated")}: </b> ${out.red.join(", ")}`);
 
-  tooltipEl.innerHTML = lines.join("<br>");
-  tooltipEl.hidden = false;
-  moveTooltip(e);
+    tooltipEl.innerHTML = lines.join("<br>");
+    tooltipEl.hidden = false;
+    moveTooltip(e);
 }
 
 function moveTooltip(e) {
-  if (!tooltipEl) return;
+    if (!tooltipEl) return;
 
-  const pad = 12;
+    const pad = 12;
 
-  const rect = tooltipEl.getBoundingClientRect();
-  console.log(rect);
+    const rect = tooltipEl.getBoundingClientRect();
+    console.log(rect);
 
-  let x = e.clientX + pad;
-  let y = e.clientY + pad;
+    let x = e.clientX + pad;
+    let y = e.clientY + pad;
 
-  if (x + rect.width > window.innerWidth) {
-    x = e.clientX - rect.width - pad;
-  }
+    if (x + rect.width > window.innerWidth) {
+        x = e.clientX - rect.width - pad;
+    }
 
-  if (y + rect.height > window.innerHeight) {
-    y = e.clientY - rect.height - pad;
-  }
+    if (y + rect.height > window.innerHeight) {
+        y = e.clientY - rect.height - pad;
+    }
 
-  if (x < pad) x = pad;
+    if (x < pad) x = pad;
 
-  if (y < pad) y = pad;
+    if (y < pad) y = pad;
 
-  tooltipEl.style.left = `${x}px`;
-  tooltipEl.style.top = `${y}px`;
+    tooltipEl.style.left = `${x}px`;
+    tooltipEl.style.top = `${y}px`;
 }
 
 
@@ -475,16 +476,16 @@ function hideTooltip() {
 }
 
 function summarizeOutcome(scenario) {
-  const out = {
-    green: [],
-    yellow: [],
-    red: []
-  };
+    const out = {
+        green: [],
+        yellow: [],
+        red: []
+    };
 
-  for (const [team, info] of Object.entries(scenario.byTeam || {})) {
-    out[info.bucket]?.push(team);
-  }
-  return out;
+    for (const [team, info] of Object.entries(scenario.byTeam || {})) {
+        out[info.bucket]?.push(team);
+    }
+    return out;
 }
 
 
@@ -532,3 +533,47 @@ window.addEventListener("resize", () => {
     window.__calloutTimer = setTimeout(drawCalloutsSimple, 60);
 });
 
+/**
+ * Easter eggs lol - triple-tap ZH within 2 seconds
+ */
+let zhClickCount = 0;
+let zhClickTimer = null;
+let eggShown = false;
+
+function zhEasterEgg(lang) {
+  if (lang !== "zh") {
+    resetZhEgg();
+    return;
+  }
+
+  zhClickCount += 1;
+
+  if (zhClickTimer) clearTimeout(zhClickTimer);
+  zhClickTimer = setTimeout(() => {
+    zhClickCount = 0;
+    zhClickTimer = null;
+  }, 2000);
+
+  if (zhClickCount >= 3) {
+    zhClickCount = 0; 
+    toggleEasterEgg();
+  }
+}
+
+function toggleEasterEgg() {
+  eggShown = !eggShown;
+  showEasterEgg(eggShown);
+}
+
+function resetZhEgg() {
+  zhClickCount = 0;
+  eggShown = false;
+  if (zhClickTimer) clearTimeout(zhClickTimer);
+  zhClickTimer = null;
+  showEasterEgg(false);
+}
+
+function showEasterEgg(shown) {
+    const easter = document.getElementById("easter");
+    easter.hidden = !shown;
+}
