@@ -67,12 +67,12 @@ header h1 {
 
 .bar {
   display: flex;
-  gap: 2px;
+  gap: var(--cell-gap);
 }
 
 .cell {
-  width: 14px;
-  height: 14px;
+  width: var(--cell-w);
+  height: var(--cell-h);
   border-radius: 5px;
   position: relative;
   opacity: 0.3;
@@ -171,6 +171,12 @@ button.opt.active {
   align-items: start;
 }
 
+:root{
+  --cell-h: 14px;
+  --cell-w: 14px;
+  --cell-gap: 2px
+}
+
 @media (min-width: 1500px){
   .view-grid{
     grid-template-columns: repeat(3, minmax(480px, 1fr));
@@ -180,6 +186,13 @@ button.opt.active {
 @media (max-width: 1100px){
   .view-grid{
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px){
+  :root{
+    --cell-w: clamp(9px, 2.4vw, 14px);
+    --cell-gap: clamp(1px, 0.6vw, 2px)
   }
 }
 
