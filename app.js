@@ -120,28 +120,40 @@ function renderBars() {
 }
 
 function renderGigoGrid() {
-    const root = document.querySelector(".team-view.gigo");
-    const cfg = DATA.views?.gigo;
-    if (!root || !cfg) return;
+  const root = document.querySelector(".team-view.gigo");
+  const cfg = DATA.views?.gigo;
+  if (!root || !cfg) return;
 
-    const blocks = root.querySelectorAll(".gigo-block");
-    blocks.forEach(blockEl => {
-        const r = Number(blockEl.dataset.r);
-        const c = Number(blockEl.dataset.c);
+  const blocks = root.querySelectorAll(".gigo-block");
+  blocks.forEach(blockEl => {
+    const r = Number(blockEl.dataset.r);
+    const c = Number(blockEl.dataset.c);
 
-        const b = cfg.blocks.find(x => x.r === r && x.c === c);
-        const grid = blockEl.querySelector(".grid-3x3");
-        const title = blockEl.querySelector(".block-title");
+    const b = cfg.blocks.find(x => x.r === r && x.c === c);
 
-        grid.innerHTML = "";
-        title.textContent = b?.title || "";
+    let title = blockEl.querySelector(".block-title");
+    if (!title) {
+      title = document.createElement("div");
+      title.className = "block-title";
+      blockEl.appendChild(title);
+    }
 
-        (b?.cells || []).forEach(sid => {
-            const s = scenarioById.get(sid);
-            if (!s) return;
-            grid.appendChild(createCellEl(s, "GiGO"));
-        });
+    let grid = blockEl.querySelector(".grid-3x3");
+    if (!grid) {
+      grid = document.createElement("div");
+      grid.className = "grid-3x3";
+      blockEl.appendChild(grid);
+    }
+
+    // Render
+    grid.innerHTML = "";
+
+    (b?.cells || []).forEach(sid => {
+      const s = scenarioById.get(sid);
+      if (!s) return;
+      grid.appendChild(createCellEl(s, "GiGO"));
     });
+  });
 }
 
 
@@ -173,8 +185,7 @@ function initI18n() {
             howto2: "Each cell represents one possible W/D/L combination across the remaining 4 matches. Colors indicate the result for each team in that scenario.",
             howto3: "Hover a cell to highlight the same scenario across all views. Click a cell to apply filters matching that scenario.",
             "callout-apina": "APINA VRAMeS <strong>might still be eliminated</strong> even if they win their final game.",
-            "callout-fiveway": "If everything aligns, <strong>FIVE teams</strong> could end up tied on VP — forcing a chaotic tiebreaker scenario.",
-            noteGiGO: "9 blocks, each contains a W/D/L sceanrio combination regarding 2 matches of GiGO."
+            "callout-fiveway": "If everything aligns, <strong>FIVE teams</strong> could end up tied on VP — forcing a chaotic tiebreaker scenario."
 
         },
         ja: {
@@ -197,8 +208,7 @@ function initI18n() {
             howto2: "各セルは、残り4試合における勝敗（勝／分／負）の1つの組み合わせを表しています。色はそのシナリオにおける進出状況を示しています。",
             howto3: "セルにカーソルを合わせると、同一シナリオがすべての図でハイライトされます。セルをクリックすると、その結果に対応するシナリオのみが表示されます。",
             "callout-apina": "APINA VRAMeSは最終戦に勝っても、<strong>敗退する可能性があります</strong>。",
-            "callout-fiveway": "条件がすべて噛み合うと、<strong>5チーム</strong>が勝点で同率となり、混沌としたタイブレークに突入する可能性も…！？",
-            noteGiGO: "全9ブロックで、各ブロックはGiGOの2試合における勝敗（W/D/L）のシナリオ1通りを表しています。"
+            "callout-fiveway": "条件がすべて噛み合うと、<strong>5チーム</strong>が勝点で同率となり、混沌としたタイブレークに突入する可能性も…！？"
         },
         zh: {
             title: "BEMANI PRO LEAGUE S5 SDVX 常规赛第10轮后 晋级形势可视化",
@@ -220,8 +230,7 @@ function initI18n() {
             howto2: "每一个色块代表剩余 4 场比赛中一种胜 / 平 / 负的组合情况。颜色表示该情形下的结果：晋级、需要破平，或被淘汰。",
             howto3: "将鼠标悬停在色块上，可在所有视图中高亮同一种组合情况。点击色块，可筛选出与该情况一致的比赛结果。",
             "callout-apina": "就算 APINA VRAMeS 获胜，在最糟糕的几种情况下<strong>仍然可能出局</strong>。",
-            "callout-fiveway": "有一种最离谱的剧本——<strong>5只队伍</strong>的胜分甚至会完全相同，并列第三，直接进入完全无法预测的破平环节…！？",
-            noteGiGO: "9个区域中，每一个区域表示一种 GiGO 自己参与的两场比赛的胜/平/负情景组合。"
+            "callout-fiveway": "有一种最离谱的剧本——<strong>5只队伍</strong>的胜分甚至会完全相同，并列第三，直接进入完全无法预测的破平环节…！？"
         }
     };
 

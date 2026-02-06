@@ -20,15 +20,15 @@
                     For the best browsing experience, please visit this website on a desktop or laptop computer.
                 </p>
                 <div id="easter" class="easter" hidden>
-                    <img src="haha.png" alt="敲锣打鼓提前恭喜round1获得bpl s4 iidx冠军​.jpg"/>
+                    <img src="haha.png" alt="敲锣打鼓提前恭喜round1获得bpl s4 iidx冠军​.jpg" />
                 </div>
             </div>
             <p class="github-info">
                 <a class="github-link" href="https://github.com/ritashim/bpls5-sdvx-r10-scenarios">GitHub</a>
             </p>
             <p class="github-info">
-                Inspired by the classic <a class="github-link"
-                    href="https://rocket3989.github.io/worlds-2021/">Worlds Group Advancement visualization</a> by
+                Inspired by the classic <a class="github-link" href="https://rocket3989.github.io/worlds-2021/">Worlds
+                    Group Advancement visualization</a> by
                 Collin.
             </p>
         </div>
@@ -39,8 +39,8 @@
             <button type="button" class="lang-btn" data-lang="zh">中文</button>
         </div>
 
-        <br/>
-        <hr/>
+        <br />
+        <hr />
     </header>
 
     <main>
@@ -49,7 +49,8 @@
         <section id="filters" class="panel">
             <div class="hint">
                 <p data-i18n="howto1">
-                    The charts below visualize all possible outcomes across the remaining matches and how each team could advance.
+                    The charts below visualize all possible outcomes across the remaining matches and how each team
+                    could advance.
                 </p>
                 <p data-i18n="howto2">
                     Each cell represents one possible W/D/L combination across the remaining 4 matches.
@@ -61,7 +62,7 @@
                 </p>
             </div>
 
-            <hr/>
+            <hr />
 
             <!-- app.js will populate match rows into this container -->
             <div id="panel-head" class="panel-head">
@@ -79,7 +80,7 @@
                     <div class="lamp off">GG</div>
                 </div>
 
-                <div class="match-filters" aria-label="Match filters"></div><br/>
+                <div class="match-filters" aria-label="Match filters"></div><br />
                 <button data-i18n="clear" class="clear-btn" id="clearFilters" type="button">Clear</button>
             </div>
         </section>
@@ -238,63 +239,46 @@
                 <div class="team-view gigo" data-team="GiGO">
                     <div class="team-head">
                         <h3>GiGO</h3>
-                        <div class="team-note" data-i18n="noteGiGO">9 blocks, each contains a W/D/L sceanrio combination
-                            regarding 2 matches of GiGO.</div>
                     </div>
 
-                    <div class="gigo-board">
-                        <!-- row 0 -->
-                        <div class="gigo-block" data-r="0" data-c="0">
-                            <b><div class="block-title"></div></b>
-                            <div class="grid-3x3"></div>
-                        </div>
-                        <div class="gigo-block" data-r="0" data-c="1">
-                            <b><div class="block-title"></div></b>
-                            <div class="grid-3x3"></div>
-                        </div>
-                        <div class="gigo-block" data-r="0" data-c="2">
-                            <b><div class="block-title"></div></b>
-                            <div class="grid-3x3"></div>
-                        </div>
+                    <div class="gigo-matrix">
+                        <!-- Top-left empty corner -->
+                        <div class="corner"></div>
 
-                        <!-- row 1 -->
-                        <div class="gigo-block" data-r="1" data-c="0">
-                            <b><div class="block-title"></div></b>
-                            <div class="grid-3x3"></div>
-                        </div>
-                        <div class="gigo-block" data-r="1" data-c="1">
-                            <b><div class="block-title"></div></b>
-                            <div class="grid-3x3"></div>
-                        </div>
-                        <div class="gigo-block" data-r="1" data-c="2">
-                            <b><div class="block-title"></div></b>
-                            <div class="grid-3x3"></div>
-                        </div>
+                        <!-- Column headers -->
+                        <div class="col-h">W Tradz</div>
+                        <div class="col-h">D Tradz</div>
+                        <div class="col-h">L Tradz</div>
 
-                        <!-- row 2 -->
-                        <div class="gigo-block" data-r="2" data-c="0">
-                            <b><div class="block-title"></div></b>
-                            <div class="grid-3x3"></div>
-                        </div>
-                        <div class="gigo-block" data-r="2" data-c="1">
-                            <b><div class="block-title"></div></b>
-                            <div class="grid-3x3"></div>
-                        </div>
-                        <div class="gigo-block" data-r="2" data-c="2">
-                            <b><div class="block-title"></div></b>
-                            <div class="grid-3x3"></div>
-                        </div>
+                        <!-- Row 1 -->
+                        <div class="row-h">W R1</div>
+                        <div class="gigo-block" data-r="0" data-c="0"></div>
+                        <div class="gigo-block" data-r="0" data-c="1"></div>
+                        <div class="gigo-block" data-r="0" data-c="2"></div>
+
+                        <!-- Row 2 -->
+                        <div class="row-h">D R1</div>
+                        <div class="gigo-block" data-r="1" data-c="0"></div>
+                        <div class="gigo-block" data-r="1" data-c="1"></div>
+                        <div class="gigo-block" data-r="1" data-c="2"></div>
+
+
+                        <!-- Row 3 -->
+                        <div class="row-h">L R1</div>
+                        <div class="gigo-block" data-r="2" data-c="0"></div>
+                        <div class="gigo-block" data-r="2" data-c="1"></div>
+                        <div class="gigo-block" data-r="2" data-c="2"></div>
                     </div>
                 </div>
 
                 <div id="callout-apina" class="callout" data-i18n="callout-apina">
-                APINA might still be eliminated<br/>
-                even if they win.
+                    APINA might still be eliminated<br />
+                    even if they win.
                 </div>
 
                 <div id="callout-fiveway" class="callout" data-i18n="callout-fiveway">
-                If everything aligns,<br/>
-                FIVE teams could tie on VP (!?)
+                    If everything aligns,<br />
+                    FIVE teams could tie on VP (!?)
                 </div>
 
             </div>
@@ -316,9 +300,9 @@
 
     <!-- easter eggs -->
     <dialog class="ds-popup" id="ds1">
-		<h1 id="easter-title">YOU DUNAIED</h1>
+        <h1 id="easter-title">YOU DUNAIED</h1>
         <h5 id="easter-text">你毒奶了。</h5>
-	</dialog>
+    </dialog>
 
     <script src="app.js"></script>
 </body>
