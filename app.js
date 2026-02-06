@@ -442,13 +442,32 @@ function showTooltip(e, scenario) {
 }
 
 function moveTooltip(e) {
-    if (!tooltipEl) return;
-    const pad = 12;
-    const x = Math.min(window.innerWidth - 220, e.clientX + pad);
-    const y = Math.min(window.innerHeight - 120, e.clientY + pad);
-    tooltipEl.style.left = `${x}px`;
-    tooltipEl.style.top = `${y}px`;
+  if (!tooltipEl) return;
+
+  const pad = 12;
+
+  const rect = tooltipEl.getBoundingClientRect();
+  console.log(rect);
+
+  let x = e.clientX + pad;
+  let y = e.clientY + pad;
+
+  if (x + rect.width > window.innerWidth) {
+    x = e.clientX - rect.width - pad;
+  }
+
+  if (y + rect.height > window.innerHeight) {
+    y = e.clientY - rect.height - pad;
+  }
+
+  if (x < pad) x = pad;
+
+  if (y < pad) y = pad;
+
+  tooltipEl.style.left = `${x}px`;
+  tooltipEl.style.top = `${y}px`;
 }
+
 
 function hideTooltip() {
     if (!tooltipEl) return;
