@@ -131,7 +131,7 @@ header h1 {
 .match-buttons { display: flex; gap: 6px; }
 button.opt {
   background: #222; color: #ddd; border: 1px solid #444;
-  padding: 4px 8px; border-radius: 8px; cursor: pointer;
+  padding: 4px 8px; border-radius: 8px; cursor: pointer; line-height: 1.2; width: 40px;
 }
 button.opt.active {
   border-color: #fff;
@@ -184,8 +184,10 @@ button.opt.active {
 }
 
 .lang-switch{
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 70px;
   gap:8px;
-  justify-content:flex-end;
   margin-top:8px;
 }
 
@@ -196,6 +198,7 @@ button.opt.active {
   padding:4px 10px;
   border-radius:10px;
   cursor:pointer;
+  line-height: 1.2;
 }
 
 .lang-btn.active{
@@ -210,6 +213,7 @@ button.opt.active {
   padding:4px 10px;
   border-radius:10px;
   cursor:pointer;
+  line-height: 1.2;
 }
 
 .tooltip{
