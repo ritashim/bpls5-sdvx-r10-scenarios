@@ -250,3 +250,60 @@ button.opt.active {
 #callout-fiveway::after{
   left: 130px;
 }
+
+/* Easter eggs */
+@font-face {
+	font-family: "Optimus Princeps";
+	src: url('OptimusPrinceps.ttf') format('truetype');
+}
+dialog.ds-popup{
+	/* box */
+	position: fixed;
+	z-index: 99;
+	top: 20%;
+	width: 100%;
+
+	/* text */
+	text-align: center;
+	font-size: 2.5em;
+	font-family: 'Optimus Princeps', 'Times New Roman', sans-serif;
+	padding: 0;
+
+	/* colors */
+	background-color: #000;
+	color: red;
+
+	/* effects */
+	border: none;
+	box-shadow: 
+		0 0 .5em 1em #000, 
+		0 0 0 1000px rgba(50, 50, 50, 0.5) ;
+	text-shadow: 0 0 1.2em orangered;
+
+	/* animation */
+	animation-name: ds-popup-anim;
+	animation-duration: 10s;
+	animation-iteration-count: 1;
+}
+
+@keyframes ds-popup-anim {
+	from {
+		opacity: 0;
+		font-size: 2em;
+		text-shadow: 0 0 .6em orange;
+	}
+
+	15%{
+		opacity: 1;
+		text-shadow: 0 0 1em orangered;
+	}
+
+	95%{
+		opacity: 1;
+	}
+
+	to {
+		font-size: 2.5em;
+		opacity: 0;
+	}
+}

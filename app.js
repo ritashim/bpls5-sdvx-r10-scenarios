@@ -576,4 +576,25 @@ function resetZhEgg() {
 function showEasterEgg(shown) {
     const easter = document.getElementById("easter");
     easter.hidden = !shown;
+    if(shown) {
+        playDsPopup("ds1", 3);
+    }
+}
+
+var dsPopupPlaying = false;
+function playDsPopup( id, time=10 ) {
+    console.log("YOU DUNAIED")
+	let dialog = document.getElementById(id);
+	dialog.style.animationDuration = time+'s';
+	dialog.setAttribute('open',true);
+	// allows only one animation playing at a time.
+	let ddialog = function () { 
+			dialog.removeAttribute('open');
+			dialog.removeEventListener('animationend',ddialog,false);
+			dsPopupPlaying = false;
+		};
+	if (!dsPopupPlaying) {
+		dialog.addEventListener('animationend',ddialog,false);
+		dsPopupPlaying = true;
+	}
 }
