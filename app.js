@@ -156,7 +156,7 @@ function initI18n() {
         en: {
             title: "BEMANI PRO LEAGUE S5 SDVX Playoff Qualification Scenarios (After Regular Stage - Game 10)",
             subtitle: "Outcome visualization for all remaining W/D/L combinations.",
-            device: "For the best browsing experience, please visit this website on a desktop or laptop computer.",
+            device: "For the best experience, please view this page on a desktop browser in full-screen mode.",
             whatIf: "What if… (Match Results)",
             views: "Views",
             clear: "Clear",
@@ -180,7 +180,7 @@ function initI18n() {
         ja: {
             title: "BEMANI PRO LEAGUE S5 SDVX 勝敗別・セミファイナル進出シナリオ (レギュラーステージ 第10試合終了時点)",
             subtitle: "残り試合の勝敗（勝/分/敗）組み合わせを、各チームの進出/タイブレーク/敗退で可視化します。",
-            device: "最適な閲覧体験のため、デスクトップまたはノートパソコンで本サイトをご利用ください。",
+            device: "本ページは情報量が多いため、PCブラウザの全画面表示での閲覧を推奨します。",
             whatIf: "試合結果",
             clear: "リセット",
             views: "チーム別ビュー",
@@ -203,7 +203,7 @@ function initI18n() {
         zh: {
             title: "BEMANI PRO LEAGUE S5 SDVX 常规赛第10轮后 晋级形势可视化",
             subtitle: "用颜色展示剩余比赛所有（胜/平/负）组合下的晋级形势。",
-            device: "为获得最佳浏览体验，请使用台式机或笔记本电脑访问本网站。",
+            device: "请在电脑浏览器的全屏模式下浏览本页面，以获得最佳体验。",
             whatIf: "假设赛果是……",
             clear: "重置",
             views: "各队情况图",

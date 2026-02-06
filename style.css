@@ -189,6 +189,10 @@ button.opt.active {
   }
 }
 
+@media (min-width: 1100px){
+  #device-note {display: none;}
+}
+
 @media (max-width: 480px){
   :root{
     --cell-w: clamp(9px, 2.4vw, 14px);
