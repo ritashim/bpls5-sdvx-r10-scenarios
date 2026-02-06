@@ -399,7 +399,6 @@ dialog.ds-popup{
   fate lamp (for mobile)
 */
 .status-lights{
-  display: none;                /* hidden on desktop */
   gap: 5px;
   align-items: center;
   flex-wrap: nowrap;            /* keep on one line */
@@ -415,9 +414,24 @@ dialog.ds-popup{
 }
 
 @media (max-width: 900px){
-  .status-lights{
+  #statusLights{
     display: grid;
     grid-template-columns: repeat(7, minmax(0, 1fr));
+  }
+
+  #statusLightsDesktop{
+    display: none;
+  }
+}
+
+@media (min-width: 900px){
+  #statusLightsDesktop{
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+  }
+
+  #statusLights{
+    display: none;
   }
 }
 
@@ -425,8 +439,8 @@ dialog.ds-popup{
 .lamp{
   flex: 0 0 auto;
   width: 0.1fr;
-  height: 30px;
-  line-height: 30px;           
+  height: 25px;
+  line-height: 25px;           
   display: grid;
   place-items: center;
   /* border-radius: 10px; */

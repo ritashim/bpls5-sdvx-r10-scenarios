@@ -406,6 +406,7 @@ function updateHighlight() {
  * Hover tips
  */
 const tooltipEl = document.getElementById("tooltip");
+const tooltipMatchEl = document.getElementById("tooltip-match");
 
 function formatResultLabel(mid, val) {
     const m = (DATA?.meta?.matches || []).find(x => x.id === mid);
@@ -415,7 +416,9 @@ function formatResultLabel(mid, val) {
 
 function showTooltip(e, scenario) {
     if (!tooltipEl) return;
+    if (!tooltipMatchEl) return;
 
+    // Match
     const r = scenario.results || {};
     const lines = [
         formatResultLabel("m1", r.m1),
@@ -424,22 +427,12 @@ function showTooltip(e, scenario) {
         formatResultLabel("m4", r.m4),
     ];
 
+    tooltipMatchEl.innerHTML = lines.join("<br>");
+
+    // Fate Lamp
     const out = summarizeOutcome(scenario);
+    updateStatusLightsDesktop(out);
 
-    lines.push("<hr>");
-
-    if (out.green.length)
-        lines.push(`<b>${t("hoverQualified")}: </b> ${out.green.join(", ")}`);
-
-    if (out.yellow.length)
-        lines.push(
-            `<b>${t("hoverTiebreaker")}` + (out.yellow.length > 1 ? ` (${out.yellow.length}${t("teams")})` : "") + `: </b> ${out.yellow.join(", ")}`
-        );
-
-    if (out.red.length)
-        lines.push(`<b>${t("hoverEliminated")}: </b> ${out.red.join(", ")}`);
-
-    tooltipEl.innerHTML = lines.join("<br>");
     tooltipEl.hidden = false;
     moveTooltip(e);
 }
@@ -490,7 +483,7 @@ function summarizeOutcome(scenario) {
 }
 
 /**
- * Mobile: Fate lamp
+ * Fate lamp
  */
 const TEAMS = ["LEISURELAND","ROUND1","Tradz","GAME PANIC","APINA","SILKHAT","GiGO"]; // 你想显示谁就放谁
 
@@ -529,6 +522,20 @@ function updateStatusLights(){
     const locked = buckets.size === 1 ? [...buckets][0] : null;
     return renderLight(team, locked);
   }).join("");
+}
+
+function updateStatusLightsDesktop(out){
+    const root = document.getElementById("statusLightsDesktop");
+    if (!root) return;
+
+    root.innerHTML = TEAMS.map(team => {
+      var locked = null;
+      if(out["red"].includes(team)) locked = "red";
+      if(out["yellow"].includes(team)) locked = "yellow";
+      if(out["green"].includes(team)) locked = "green";
+
+      return renderLight(team, locked);
+    }).join("");
 }
 
 function renderLight(team, lockedBucket){
