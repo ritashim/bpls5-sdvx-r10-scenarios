@@ -125,6 +125,8 @@ button.opt {
 button.opt.active {
   border-color: #fff;
   color: #fff;
+  font-weight: bold;
+  border: 3px solid;
 }
 
 .cell.empty { background: transparent; border: 1px dashed #333; opacity: 0.4; }
