@@ -408,10 +408,12 @@ function updateHighlight() {
 const tooltipEl = document.getElementById("tooltip");
 const tooltipMatchEl = document.getElementById("tooltip-match");
 
-function formatResultLabel(mid, val) {
-    const m = (DATA?.meta?.matches || []).find(x => x.id === mid);
-    const label = m ? m.label : mid;
-    return `${label}: ${val}`;
+function formatResultLabel(mid, result) {
+    const match = (DATA?.meta?.matches || []).find(x => x.id === mid);
+    var symbol;
+    if(result === "W") return `<span class="team winner">${match.team1}</span><span class="team symbol"> > </span><span class="team loser">${match.team2}</span>`;
+    if(result === "D") return `<span class="team draw">${match.team1}</span><span class="team symbol"> = </span><span class="team draw">${match.team2}</span>`;
+    if(result === "L") return `<span class="team loser">${match.team1}</span><span class="team symbol"> < </span><span class="team winner">${match.team2}</span>`;
 }
 
 function showTooltip(e, scenario) {

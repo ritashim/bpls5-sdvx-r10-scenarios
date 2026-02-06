@@ -126,6 +126,23 @@ header h1 {
 .cell.match { opacity: 1; }
 .cell.hover { outline: none; z-index:2; box-shadow: inset 0 0 0 2px #fff;}
 
+.team.winner{
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.team.loser{
+  color:#aaa;
+}
+
+.team.draw{
+  color:#aaa;
+}
+
+.team.symbol{
+  color:#aaa;
+}
+
 #filters .match { margin: 8px 0; }
 
 
