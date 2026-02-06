@@ -64,13 +64,14 @@
             <hr/>
 
             <!-- app.js will populate match rows into this container -->
-            <div class="panel-head">
+            <div id="panel-head" class="panel-head">
                 <h2 data-i18n="whatIf">What if… (Match Results)</h2>
             </div>
 
-            <div class="match-filters" aria-label="Match filters"></div><br/>
-
-            <button data-i18n="clear" class="clear-btn" id="clearFilters" type="button">Clear</button>
+            <div class="filters-panel">
+                <div class="match-filters" aria-label="Match filters"></div><br/>
+                <button data-i18n="clear" class="clear-btn" id="clearFilters" type="button">Clear</button>
+            </div>
         </section>
 
         <!-- Views -->
