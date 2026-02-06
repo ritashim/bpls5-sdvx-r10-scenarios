@@ -398,6 +398,8 @@ function updateHighlight() {
         // Optional: dim unmatched cells strongly
         el.classList.toggle("dim", !match);
     });
+
+    updateStatusLights();
 }
 
 /**
@@ -448,7 +450,6 @@ function moveTooltip(e) {
     const pad = 12;
 
     const rect = tooltipEl.getBoundingClientRect();
-    console.log(rect);
 
     let x = e.clientX + pad;
     let y = e.clientY + pad;
@@ -488,6 +489,73 @@ function summarizeOutcome(scenario) {
     return out;
 }
 
+/**
+ * Mobile: Fate lamp
+ */
+const TEAMS = ["LEISURELAND","ROUND1","Tradz","GAME PANIC","APINA","SILKHAT","GiGO"]; // 你想显示谁就放谁
+
+function getOutcomeBucketForTeam(scenario, team){
+  return scenario.byTeam?.[team]?.bucket; // "green" | "yellow" | "red"
+}
+
+function updateStatusLights(){
+  const root = document.getElementById("statusLights");
+  if (!root) return;
+
+  // 取所有 match 的 scenario（去重 sid）
+  const matchedScenarios = [];
+  const seen = new Set();
+  allCells.forEach(({ scenario, sid }) => {
+    if (!seen.has(sid) && scenarioMatchesFilter(scenario)) {
+      seen.add(sid);
+      matchedScenarios.push(scenario);
+    }
+  });
+
+  // 如果用户筛选太严格导致 0 个 match：全部灯灭
+  if (matchedScenarios.length === 0){
+    root.innerHTML = TEAMS.map(t => renderLight(t, null)).join("");
+    return;
+  }
+
+  root.innerHTML = TEAMS.map(team => {
+    const buckets = new Set();
+    matchedScenarios.forEach(s => {
+      const b = getOutcomeBucketForTeam(s, team);
+      if (b) buckets.add(b);
+    });
+
+    // “命运彻底确定”= buckets 只有一种
+    const locked = buckets.size === 1 ? [...buckets][0] : null;
+    return renderLight(team, locked);
+  }).join("");
+}
+
+function renderLight(team, lockedBucket){
+  const cls = lockedBucket ? lockedBucket : "off";
+  const dotCls = lockedBucket ? lockedBucket : "";
+  const label = teamShort(team); 
+  return `
+    <div class="lamp ${lockedBucket ? lockedBucket : "off"}" data-team="${team}">
+      <span class="dot ${dotCls}"></span>
+      <span>${label}</span>
+    </div>
+  `;
+}
+
+const teamShortNameMap = {
+  "LEISURELAND": "LL",
+  "ROUND1": "R1",
+  "Tradz": "TR",
+  "GAME PANIC": "GP",
+  "APINA": "AP",
+  "GiGO": "GG",
+  "SILKHAT": "SH"
+};
+
+function teamShort(teamMidName) {
+  return teamShortNameMap[teamMidName] ?? teamMidName;
+}
 
 /**
  * Callouts
