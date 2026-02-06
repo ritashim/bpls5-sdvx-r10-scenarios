@@ -314,6 +314,13 @@ dialog.ds-popup{
     display: block;
 }
 
-#ds1 h1 {
+#easter-title {
     white-space: nowrap;
+}
+
+#easter-text {
+  	color: white;
+    font-size: 0.7em;
+    font-weight: normal;
+    text-shadow: 0 0 0 white;
 }
