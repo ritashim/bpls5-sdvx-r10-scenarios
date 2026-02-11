@@ -1,5 +1,5 @@
 /**
-  Theme
+  Theme + Tokens
 */
 :root{
   --c-green: #2ecc71;
@@ -9,6 +9,10 @@
   --c-green-text: black;
   --c-yellow-text:black;
   --c-red-text:   white;
+
+  --cell-h: 14px;
+  --cell-w: 14px;
+  --cell-gap: 2px
 }
 
 :root[data-theme="cb"]{
@@ -21,28 +25,9 @@
   --c-red-text:   black;
 }
 
-main{
-  display: grid;
-  grid-template-columns: 360px 1fr;
-  gap: 28px;
-  align-items: start;
-}
-
-@media (max-width: 1200px){
-  main{
-    grid-template-columns: 1fr;
-  }
-}
-
-.github-info {
-    color: #777;
-    font-size: 11px;
-}
-
-.github-link {
-    color: #777;
-}
-
+/**
+  Base
+*/
 html, body {
   max-width: 100%;
   overflow-x: visible;
@@ -80,6 +65,25 @@ header h1 {
   margin: 2px 0px;
 }
 
+.github-info,
+.github-link {
+  color: #777;
+}
+
+.github-info {
+  font-size: 11px;
+}
+
+/**
+  Layout
+*/
+main{
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
 .team-view {
   margin: 15px 0;
 }
@@ -92,6 +96,23 @@ header h1 {
   grid-column: 1 / -1;
 }
 
+.view-grid{
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(clamp(280px, 100%, 520px), 1fr)
+  );
+  gap: 0px 28px;
+  align-items: start;
+}
+
+.views-root{
+  position: relative;
+}
+
+/**
+  Bars / Cells
+*/
 .team-head h3 {
   margin-bottom: 12px;
   line-height: 1.15;
@@ -168,14 +189,8 @@ header h1 {
   text-decoration: underline;
 }
 
-.team.loser{
-  color:#aaa;
-}
-
-.team.draw{
-  color:#aaa;
-}
-
+.team.loser,
+.team.draw,
 .team.symbol{
   color:#aaa;
 }
@@ -202,6 +217,9 @@ button.opt.active {
 .row { display: grid; grid-template-columns: 22px 1fr; align-items: center; gap: 1px; grid-auto-rows: 13px;}
 .row-label { color:#aaa; font-weight:700; font-size:12px; text-align:center; }
 
+/**
+  GIGO Matrix
+*/
 .gigo-matrix{
   display: grid;
   grid-template-columns:
@@ -269,34 +287,9 @@ button.opt.active {
   margin-bottom: 3px;
 }
 
-.view-grid{
-  display: grid;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(clamp(280px, 100%, 520px), 1fr)
-  );
-  gap: 0px 28px;
-  align-items: start;
-}
-
-:root{
-  --cell-h: 14px;
-  --cell-w: 14px;
-  --cell-gap: 2px
-}
-
-@media (min-width: 1500px){
-  .view-grid{
-    grid-template-columns: repeat(3, minmax(480px, 1fr));
-  }
-}
-
-@media (max-width: 1100px){
-  .view-grid{
-    grid-template-columns: 1fr;
-  }
-}
-
+/**
+  Controls
+*/
 .lang-switch{
   display: grid;
   grid-auto-flow: column;
@@ -305,7 +298,9 @@ button.opt.active {
   margin-top:8px;
 }
 
-.lang-btn{
+.lang-btn,
+.cb-btn,
+.clear-btn{
   background:#222;
   color:#ddd;
   border:1px solid #444;
@@ -320,32 +315,15 @@ button.opt.active {
   color:#fff;
 }
 
-.cb-btn{
-  background:#222;
-  color:#ddd;
-  border:1px solid #444;
-  padding:4px 10px;
-  border-radius:10px;
-  cursor:pointer;
-  line-height: 1.2;
-}
-
 .cb-btn.active{
   background: #f2f2f2;
   color: #111;
   border-color: #f2f2f2;
 }
 
-.clear-btn{
-  background:#222;
-  color:#ddd;
-  border:1px solid #444;
-  padding:4px 10px;
-  border-radius:10px;
-  cursor:pointer;
-  line-height: 1.2;
-}
-
+/**
+  Tooltip / Callout
+*/
 .tooltip{
   position: fixed;
   z-index: 9999;
@@ -359,11 +337,6 @@ button.opt.active {
   line-height: 1.3;
   white-space: nowrap;
   transform: translate(10px, 10px);
-}
-
-/* viewsRoot must be positioning context */
-.views-root{
-  position: relative;
 }
 
 /* callout bubble */
@@ -399,7 +372,9 @@ button.opt.active {
   left: 130px;
 }
 
-/* Easter eggs */
+/**
+  Easter Eggs
+*/
 @font-face {
 	font-family: "Optimus Princeps";
 	src: url('OptimusPrinceps.ttf') format('truetype');
@@ -474,51 +449,7 @@ dialog.ds-popup{
 }
 
 /**
-  Mobile mode
-*/
-@media (min-width: 900px){
-  #device-note {display: none;}
-}
-
-@media (max-width: 900px){
-  #panel-head {display: none;}
-  #clearFilters {display: none;}
-  #callout-apina{ display:none !important; }
-  #callout-fiveway{ display:none !important; }
-  #tooltip {display: none;}
-
-  .filters-panel{
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 200;
-    background: rgba(17,17,17,0.92);
-    backdrop-filter: blur(8px);
-    border-top: 1px solid rgba(255,255,255,0.08);
-    padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
-  }
-
-  .match-filters{
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0px 0px;
-  }
-
-  body{
-    padding-bottom: 250px; 
-  }
-}
-
-@media (max-width: 480px){
-  .view-grid{
-    --cell-w: clamp(9px, 2.4vw, 14px);
-    --cell-gap: clamp(1px, 0.6vw, 2px)
-  }
-}
-
-/**
-  fate lamp (for mobile)
+  Responsive
 */
 .status-lights{
   gap: 5px;
@@ -533,28 +464,6 @@ dialog.ds-popup{
 
 .status-lights::-webkit-scrollbar{
   display: none;                /* Chrome/Safari hide scrollbar */
-}
-
-@media (max-width: 900px){
-  #statusLights{
-    display: grid;
-    grid-template-columns: repeat(7, minmax(0, 1fr));
-  }
-
-  #statusLightsDesktop{
-    display: none;
-  }
-}
-
-@media (min-width: 900px){
-  #statusLightsDesktop{
-    display: grid;
-    grid-template-columns: repeat(7, minmax(0, 1fr));
-  }
-
-  #statusLights{
-    display: none;
-  }
 }
 
 /* each team lamp */
@@ -596,12 +505,87 @@ dialog.ds-popup{
   border-color: rgba(255,255,255,0.08);
 }
 
+@media (min-width: 1500px){
+  .view-grid{
+    grid-template-columns: repeat(3, minmax(480px, 1fr));
+  }
+}
+
+@media (max-width: 1200px){
+  main{
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 1100px){
+  .view-grid{
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 900px){
+  #device-note {display: none;}
+  #statusLightsDesktop{
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+  }
+  #statusLights{
+    display: none;
+  }
+}
+
+@media (max-width: 900px){
+  #panel-head {display: none;}
+  #clearFilters {display: none;}
+  #callout-apina{ display:none !important; }
+  #callout-fiveway{ display:none !important; }
+  #tooltip {display: none;}
+
+  .filters-panel{
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 200;
+    background: rgba(17,17,17,0.92);
+    backdrop-filter: blur(8px);
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
+  }
+
+  .match-filters{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0px 0px;
+  }
+
+  body{
+    padding-bottom: 250px; 
+  }
+
+  #statusLights{
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+  }
+
+  #statusLightsDesktop{
+    display: none;
+  }
+}
+
 @media (max-width: 420px){
   .lamp{
     width: 48px;
     height: 28px;
     font-size: 11px;
     border-radius: 9px;
+  }
+}
+
+@media (max-width: 480px){
+  .view-grid{
+    --cell-w: clamp(9px, 2.4vw, 14px);
+    --cell-gap: clamp(1px, 0.6vw, 2px)
   }
 }
 
