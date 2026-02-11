@@ -2,7 +2,7 @@
 
 const state = {
     hoverSid: null,
-    filter: { m1: null, m2: null, m3: null, m4: null }
+    filter: {}
 };
 
 let DATA = null;
@@ -18,6 +18,7 @@ fetch("data.json")
     .then(data => {
         DATA = data;
         scenarioById = new Map(DATA.scenarios.map(s => [s.id, s]));
+        state.filter = buildFilterFromMatches(DATA.meta.matches);
         buildMatchFilters(DATA.meta.matches);
         renderAllViews();
         wireClearButton();
@@ -374,6 +375,26 @@ function buildMatchFilters(matches) {
     syncFilterUI();
 }
 
+function normalizeResult(value) {
+    return value === "W" || value === "D" || value === "L" ? value : null;
+}
+
+function buildFilterFromMatches(matches) {
+    const filter = {};
+    (matches || []).forEach(m => {
+        filter[m.id] = normalizeResult(m.actual);
+    });
+    return filter;
+}
+
+function buildEmptyFilter(matches) {
+    const filter = {};
+    (matches || []).forEach(m => {
+        filter[m.id] = null;
+    });
+    return filter;
+}
+
 function syncFilterUI() {
     document.querySelectorAll(".match").forEach(matchEl => {
         const mid = matchEl.dataset.match;
@@ -389,12 +410,11 @@ function syncFilterUI() {
 
 function applyScenarioToFilter(scenario) {
     const r = scenario.results || {};
-    state.filter = {
-        m1: r.m1 ?? null,
-        m2: r.m2 ?? null,
-        m3: r.m3 ?? null,
-        m4: r.m4 ?? null
-    };
+    const next = {};
+    (DATA?.meta?.matches || []).forEach(m => {
+        next[m.id] = normalizeResult(r[m.id]);
+    });
+    state.filter = next;
     syncFilterUI();
 }
 
@@ -402,7 +422,7 @@ function wireClearButton() {
     const btn = document.getElementById("clearFilters");
     if (!btn) return;
     btn.addEventListener("click", () => {
-        state.filter = { m1: null, m2: null, m3: null, m4: null };
+        state.filter = buildEmptyFilter(DATA?.meta?.matches);
         syncFilterUI();
         updateHighlight();
     });
